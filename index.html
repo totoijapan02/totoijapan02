@@ -298,9 +298,97 @@ nav a:hover { color: var(--crimson); }
 .p-img {
   width: 100%;
   aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gallery */
+.p-gallery {
+  display: flex;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+.p-gallery-item {
+  min-width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Navigation Arrows */
+.p-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--navy);
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 5;
+  line-height: 1;
+}
+.p-card:hover .p-gallery-nav {
+  opacity: 1;
+}
+.p-gallery-nav.prev {
+  left: 8px;
+}
+.p-gallery-nav.next {
+  right: 8px;
+}
+.p-gallery-nav:hover {
+  background: rgba(255,255,255,1);
+}
+
+/* Indicators */
+.p-gallery-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+.p-gallery-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.p-gallery-dot.active {
+  background: rgba(255,255,255,0.95);
+}
+.p-img.sold::after {
+  content: 'SOLD';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--crimson);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 1rem 2.5rem;
+  border: 3px solid var(--crimson);
+  border-radius: 8px;
+  z-index: 10;
+}
+.p-img.sold {
+  opacity: 0.6;
 }
 .c1 { background: #faeaef; }
 .c2 { background: #eaf0f5; }
@@ -643,12 +731,12 @@ footer {
 
       <a href="#cat-hinata" class="cat-card">
         <div class="cat-swatch">
-          <img src="hinata-photo.jpg" alt="Hinata - Yellow & golden mizuhiki pieces">
+          <img src="hinata-photo.jpg" alt="Hinata - Yellow & orange mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">日向</span>
           <span class="cat-name">Hinata</span>
-          <span class="cat-hint">yellow - gold</span>
+          <span class="cat-hint">yellow - orange</span>
         </div>
       </a>
 
@@ -696,6 +784,28 @@ footer {
         </div>
       </a>
 
+      <a href="#cat-kohaku" class="cat-card">
+        <div class="cat-swatch">
+          <img src="kohaku-photo.jpg" alt="Kohaku - Amber & brown mizuhiki pieces">
+        </div>
+        <div class="cat-info">
+          <span class="cat-kanji">琥珀</span>
+          <span class="cat-name">Kohaku</span>
+          <span class="cat-hint">amber - brown</span>
+        </div>
+      </a>
+
+      <a href="#cat-miyabi" class="cat-card">
+        <div class="cat-swatch">
+          <img src="miyabi-photo.jpg" alt="Miyabi - Lavender & purple mizuhiki pieces">
+        </div>
+        <div class="cat-info">
+          <span class="cat-kanji">雅</span>
+          <span class="cat-name">Miyabi</span>
+          <span class="cat-hint">lavender - purple</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -711,21 +821,132 @@ footer {
       <a href="#shop" class="see-all">← All colours</a>
     </div>
     <div class="p-grid">
+      
+      <!-- 
+      ========================================
+      商品1: ピアス
+      ========================================
+      編集方法:
+      1. 商品名: <div class="p-name">ここを変更</div>
+      2. 説明文: <div class="p-sub">ここを変更</div>
+      3. 写真: <img src="ファイル名.jpg">
+      4. SOLD OUT表示: <div class="p-img"> に sold を追加 → <div class="p-img sold">
+      -->
       <div class="p-card">
         <div class="p-img" style="background:#f5f3ee;">
-          <div class="photo-placeholder">
-            <span class="ph-label">Photo</span>
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <!-- 写真1: wata-earrings-01-photo1.jpg に変更してください -->
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <!-- 写真2: wata-earrings-01-photo2.jpg に変更してください -->
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
           </div>
         </div>
         <div class="p-body">
-          <div class="p-name">Coming soon</div>
-          <div class="p-sub">White &amp; off-white pieces</div>
+          <!-- 商品名（自由に変更OK） -->
+          <div class="p-name">Wata Earrings</div>
+          <!-- 説明文（自由に変更OK） -->
+          <div class="p-sub">White & cream mizuhiki</div>
           <div class="p-bottom">
-            <span class="p-price"></span>
+            <span class="p-price">$28</span>
             <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
           </div>
         </div>
       </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Wata Earrings</div>
+          <div class="p-sub">White & cream mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Wata Earrings</div>
+          <div class="p-sub">White & cream mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Wata Bookmark</div>
+          <div class="p-sub">White & cream mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -735,150 +956,901 @@ footer {
   <div class="shop-inner">
     <div class="section-head">
       <div>
-        <p class="section-num">日向 — Yellow &amp; golden</p>
+        <p class="section-num">日向 — Yellow & golden</p>
         <h2>Hinata</h2>
       </div>
       <a href="#shop" class="see-all">← All colours</a>
     </div>
     <div class="p-grid">
+      
+      <!-- Earrings 1 -->
       <div class="p-card">
         <div class="p-img" style="background:#fdf6e3;">
-          <div class="photo-placeholder">
-            <span class="ph-label">Photo</span>
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
           </div>
         </div>
         <div class="p-body">
-          <div class="p-name">Coming soon</div>
-          <div class="p-sub">Yellow &amp; golden pieces</div>
+          <div class="p-name">Hinata Earrings</div>
+          <div class="p-sub">Yellow & gold mizuhiki</div>
           <div class="p-bottom">
-            <span class="p-price"></span>
+            <span class="p-price">$28</span>
             <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
           </div>
         </div>
       </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#fdf6e3;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Hinata Earrings</div>
+          <div class="p-sub">Yellow & gold mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#fdf6e3;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Hinata Earrings</div>
+          <div class="p-sub">Yellow & gold mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#fdf6e3;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Hinata Bookmark</div>
+          <div class="p-sub">Yellow & gold mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- CAT: BENI -->
 <section class="shop-section alt" id="cat-beni">
   <div class="shop-inner">
     <div class="section-head">
       <div>
-        <p class="section-num">紅 — Red &amp; pink</p>
+        <p class="section-num">紅 — Red & pink</p>
         <h2>Beni</h2>
       </div>
       <a href="#shop" class="see-all">← All colours</a>
     </div>
     <div class="p-grid">
+      
+      <!-- Earrings 1 -->
       <div class="p-card">
         <div class="p-img" style="background:#fdeef3;">
-          <div class="photo-placeholder">
-            <span class="ph-label">Photo</span>
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
           </div>
         </div>
         <div class="p-body">
-          <div class="p-name">Coming soon</div>
-          <div class="p-sub">Red &amp; pink pieces</div>
+          <div class="p-name">Beni Earrings</div>
+          <div class="p-sub">Red & pink mizuhiki</div>
           <div class="p-bottom">
-            <span class="p-price"></span>
+            <span class="p-price">$28</span>
             <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
           </div>
         </div>
       </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#fdeef3;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Beni Earrings</div>
+          <div class="p-sub">Red & pink mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#fdeef3;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Beni Earrings</div>
+          <div class="p-sub">Red & pink mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#fdeef3;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Beni Bookmark</div>
+          <div class="p-sub">Red & pink mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- CAT: AZUKI -->
 <section class="shop-section" id="cat-azuki">
   <div class="shop-inner">
     <div class="section-head">
       <div>
-        <p class="section-num">小豆 — Deep red &amp; wine</p>
+        <p class="section-num">小豆 — Deep red & wine</p>
         <h2>Azuki</h2>
       </div>
       <a href="#shop" class="see-all">← All colours</a>
     </div>
     <div class="p-grid">
+      
+      <!-- Earrings 1 -->
       <div class="p-card">
         <div class="p-img" style="background:#f5eaee;">
-          <div class="photo-placeholder">
-            <span class="ph-label">Photo</span>
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
           </div>
         </div>
         <div class="p-body">
-          <div class="p-name">Coming soon</div>
-          <div class="p-sub">Deep red &amp; wine pieces</div>
+          <div class="p-name">Azuki Earrings</div>
+          <div class="p-sub">Deep red & purple mizuhiki</div>
           <div class="p-bottom">
-            <span class="p-price"></span>
+            <span class="p-price">$28</span>
             <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
           </div>
         </div>
       </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5eaee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Azuki Earrings</div>
+          <div class="p-sub">Deep red & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5eaee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Azuki Earrings</div>
+          <div class="p-sub">Deep red & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5eaee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Azuki Bookmark</div>
+          <div class="p-sub">Deep red & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- CAT: MORI -->
 <section class="shop-section alt" id="cat-mori">
   <div class="shop-inner">
     <div class="section-head">
       <div>
-        <p class="section-num">森 — Green &amp; moss</p>
+        <p class="section-num">森 — Green & moss</p>
         <h2>Mori</h2>
       </div>
       <a href="#shop" class="see-all">← All colours</a>
     </div>
     <div class="p-grid">
+      
+      <!-- Earrings 1 -->
       <div class="p-card">
         <div class="p-img" style="background:#eaf4ee;">
-          <div class="photo-placeholder">
-            <span class="ph-label">Photo</span>
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
           </div>
         </div>
         <div class="p-body">
-          <div class="p-name">Coming soon</div>
-          <div class="p-sub">Green &amp; moss pieces</div>
+          <div class="p-name">Mori Earrings</div>
+          <div class="p-sub">Green & moss mizuhiki</div>
           <div class="p-bottom">
-            <span class="p-price"></span>
+            <span class="p-price">$28</span>
             <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
           </div>
         </div>
       </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#eaf4ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Mori Earrings</div>
+          <div class="p-sub">Green & moss mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#eaf4ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Mori Earrings</div>
+          <div class="p-sub">Green & moss mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#eaf4ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Mori Bookmark</div>
+          <div class="p-sub">Green & moss mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- CAT: SORA -->
 <section class="shop-section" id="cat-sora">
   <div class="shop-inner">
     <div class="section-head">
       <div>
-        <p class="section-num">空 — Blue &amp; navy</p>
+        <p class="section-num">空 — Blue & navy</p>
         <h2>Sora</h2>
       </div>
       <a href="#shop" class="see-all">← All colours</a>
     </div>
     <div class="p-grid">
+      
+      <!-- Earrings 1 -->
       <div class="p-card">
         <div class="p-img" style="background:#eaeff8;">
-          <div class="photo-placeholder">
-            <span class="ph-label">Photo</span>
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
           </div>
         </div>
         <div class="p-body">
-          <div class="p-name">Coming soon</div>
-          <div class="p-sub">Blue &amp; navy pieces</div>
+          <div class="p-name">Sora Earrings</div>
+          <div class="p-sub">Blue & navy mizuhiki</div>
           <div class="p-bottom">
-            <span class="p-price"></span>
+            <span class="p-price">$28</span>
             <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
           </div>
         </div>
       </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#eaeff8;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Sora Earrings</div>
+          <div class="p-sub">Blue & navy mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#eaeff8;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Sora Earrings</div>
+          <div class="p-sub">Blue & navy mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#eaeff8;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Sora Bookmark</div>
+          <div class="p-sub">Blue & navy mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<!-- CAT: KOHAKU -->
+<section class="shop-section alt" id="cat-kohaku">
+  <div class="shop-inner">
+    <div class="section-head">
+      <div>
+        <p class="section-num">琥珀 — Amber &amp; brown</p>
+        <h2>Kohaku</h2>
+      </div>
+      <a href="#shop" class="see-all">← All colours</a>
+    </div>
+    <div class="p-grid">
+      
+      <!-- Earrings 1 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5eedf;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Kohaku Earrings</div>
+          <div class="p-sub">Amber & brown mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5eedf;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Kohaku Earrings</div>
+          <div class="p-sub">Amber & brown mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5eedf;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Kohaku Earrings</div>
+          <div class="p-sub">Amber & brown mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5eedf;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Kohaku Bookmark</div>
+          <div class="p-sub">Amber & brown mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAT: MIYABI -->
+<section class="shop-section" id="cat-miyabi">
+  <div class="shop-inner">
+    <div class="section-head">
+      <div>
+        <p class="section-num">雅 — Lavender &amp; purple</p>
+        <h2>Miyabi</h2>
+      </div>
+      <a href="#shop" class="see-all">← All colours</a>
+    </div>
+    <div class="p-grid">
+      
+      <!-- Earrings 1 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f3eef8;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Miyabi Earrings</div>
+          <div class="p-sub">Lavender & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 2 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f3eef8;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Miyabi Earrings</div>
+          <div class="p-sub">Lavender & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earrings 3 -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f3eef8;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Miyabi Earrings</div>
+          <div class="p-sub">Lavender & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$28</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookmark -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f3eef8;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 1</span></div>
+            </div>
+            <div class="p-gallery-item">
+              <div class="photo-placeholder"><span class="ph-label">Photo 2</span></div>
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Miyabi Bookmark</div>
+          <div class="p-sub">Lavender & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$22</span>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- SHIPPING & RETURNS -->
 <section class="info-section alt" id="shipping">
@@ -955,4 +1927,41 @@ footer {
     <a href="https://instagram.com/totoijapan" target="_blank">Instagram</a>
     <a href="https://ebay.com" target="_blank">eBay Shop</a>
   </div>
-  <div class="footer-copy">© 2025 totoi japan. All rights 
+  <div class="footer-copy">© 2025 totoi japan. All rights reserved.</div>
+</footer>
+
+<script>
+function moveGallery(button, direction) {
+  const card = button.closest('.p-card');
+  const gallery = card.querySelector('.p-gallery');
+  const dots = card.querySelectorAll('.p-gallery-dot');
+  const items = card.querySelectorAll('.p-gallery-item');
+  
+  let currentIndex = Array.from(dots).findIndex(dot => dot.classList.contains('active'));
+  let newIndex = currentIndex + direction;
+  
+  if (newIndex < 0) newIndex = items.length - 1;
+  if (newIndex >= items.length) newIndex = 0;
+  
+  gallery.style.transform = `translateX(-${newIndex * 100}%)`;
+  
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === newIndex);
+  });
+}
+
+function goToSlide(dot, index) {
+  const card = dot.closest('.p-card');
+  const gallery = card.querySelector('.p-gallery');
+  const dots = card.querySelectorAll('.p-gallery-dot');
+  
+  gallery.style.transform = `translateX(-${index * 100}%)`;
+  
+  dots.forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+}
+</script>
+
+</body>
+</html>
