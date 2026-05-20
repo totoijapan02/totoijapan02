@@ -671,6 +671,8 @@ footer {
   .header-logo-text { display: none; }
   nav a:not(.ig-btn) { display: none; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+body { overflow-x: hidden; }
+  * { max-width: 100%; }
 }
 .safety-note {
   padding: 0 2em;
@@ -678,10 +680,28 @@ footer {
   font-size: 0.9em;
   color: var(--text-mid);
 }
+/* ── ANNOUNCEMENT BAR ── */
+.announce-bar {
+  background: var(--crimson);
+  color: #fffcfa;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.announce-bar span {
+  opacity: 0.75;
+  margin: 0 0.6rem;
+}
+
 </style>
 </head>
 <body>
-
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  🎉 Grand Opening Sale <span>—</span> Special prices to celebrate our launch <span>—</span> Until end of August
+</div>
 <!-- HEADER -->
 <header>
   <a href="#" class="header-logo">
