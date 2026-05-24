@@ -543,6 +543,8 @@ nav a:hover { color: var(--crimson); }
   align-items: center;
   gap: 0.15rem;
   text-align: center;
+  flex: 1; 
+  min-width: 0;
 }
 .cat-kanji {
   font-family: 'Zen Maru Gothic', 'Hiragino Sans', 'Yu Gothic', sans-serif;
@@ -557,11 +559,17 @@ nav a:hover { color: var(--crimson); }
   color: var(--text-mid);
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap; /* ← 追加 */
+  overflow: hidden; /* ← 追加 */
+  text-overflow: ellipsis; /* ← 追加 */
 }
 .cat-hint {
   font-size: 0.9rem;
   color: var(--text-light);
   font-weight: 400;
+  white-space: nowrap; /* ← 追加 */
+  overflow: hidden; /* ← 追加 */
+  text-overflow: ellipsis; /* ← 追加 */
 }
 
 /* ── PHOTO PLACEHOLDER ── */
