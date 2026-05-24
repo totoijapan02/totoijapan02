@@ -470,7 +470,7 @@ nav a:hover { color: var(--crimson); }
 
 .cat-swatch {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -492,20 +492,20 @@ nav a:hover { color: var(--crimson); }
 }
 .cat-kanji {
   font-family: 'Zen Maru Gothic', 'Hiragino Sans', 'Yu Gothic', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: var(--navy);
   letter-spacing: 0.06em;
 }
 .cat-name {
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   font-weight: 500;
   color: var(--text-mid);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 .cat-hint {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: var(--text-light);
   font-weight: 400;
 }
@@ -671,11 +671,37 @@ footer {
   .header-logo-text { display: none; }
   nav a:not(.ig-btn) { display: none; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+body { overflow-x: hidden; }
+  * { max-width: 100%; }
 }
+.safety-note {
+  padding: 0 2em;
+  margin: -0.5em 0 1em;
+  font-size: 0.9em;
+  color: var(--text-mid);
+}
+/* ── ANNOUNCEMENT BAR ── */
+.announce-bar {
+  background: var(--crimson);
+  color: #fffcfa;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.announce-bar span {
+  opacity: 0.75;
+  margin: 0 0.6rem;
+}
+
 </style>
 </head>
 <body>
-
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  Grand Opening Sale <span>—</span> Special prices to celebrate our launch
+</div>30
 <!-- HEADER -->
 <header>
   <a href="#" class="header-logo">
@@ -689,7 +715,8 @@ footer {
     <a href="#shop">Shop</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a href="https://instagram.com" target="_blank" class="ig-btn">Instagram ↗</a>
+    <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
+    <a href="https://www.instagram.com/totoi_japan" target="_blank" class="ig-btn">Instagram ↗</a>
   </nav>
 </header>
 
@@ -720,7 +747,7 @@ footer {
 
       <a href="#cat-wata" class="cat-card">
         <div class="cat-swatch">
-          <img src="wata-photo.jpg" alt="Wata - White & off-white mizuhiki pieces">
+          <img src="colorcategory_wata.jpg" alt="Wata - White & off-white mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">綿</span>
@@ -731,7 +758,7 @@ footer {
 
       <a href="#cat-hinata" class="cat-card">
         <div class="cat-swatch">
-          <img src="hinata-photo.jpg" alt="Hinata - Yellow & orange mizuhiki pieces">
+          <img src="colorcategory_hinata.jpg" alt="Hinata - Yellow & orange mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">日向</span>
@@ -742,7 +769,7 @@ footer {
 
       <a href="#cat-beni" class="cat-card">
         <div class="cat-swatch">
-          <img src="beni-photo.jpg" alt="Beni - Red & pink mizuhiki pieces">
+          <img src="colorcategory_beni.jpg" alt="Beni - Red & pink mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">紅</span>
@@ -753,7 +780,7 @@ footer {
 
       <a href="#cat-azuki" class="cat-card">
         <div class="cat-swatch">
-          <img src="azuki-photo.jpg" alt="Azuki - Deep red & wine mizuhiki pieces">
+          <img src="colorcategory_azuki.jpg" alt="Azuki - Deep red & wine mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">小豆</span>
@@ -764,7 +791,7 @@ footer {
 
       <a href="#cat-mori" class="cat-card">
         <div class="cat-swatch">
-          <img src="mori-photo.jpg" alt="Mori - Green & moss mizuhiki pieces">
+          <img src="colorcategory_mori.jpg" alt="Mori - Green & moss mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">森</span>
@@ -775,7 +802,7 @@ footer {
 
       <a href="#cat-sora" class="cat-card">
         <div class="cat-swatch">
-          <img src="sora-photo.jpg" alt="Sora - Blue & navy mizuhiki pieces">
+          <img src="colorcategory_sora.jpg" alt="Sora - Blue & navy mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">空</span>
@@ -786,7 +813,7 @@ footer {
 
       <a href="#cat-kohaku" class="cat-card">
         <div class="cat-swatch">
-          <img src="kohaku-photo.jpg" alt="Kohaku - Amber & brown mizuhiki pieces">
+          <img src="colorcategory_kohaku.jpg" alt="Kohaku - Amber & brown mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">琥珀</span>
@@ -797,7 +824,7 @@ footer {
 
       <a href="#cat-miyabi" class="cat-card">
         <div class="cat-swatch">
-          <img src="miyabi-photo.jpg" alt="Miyabi - Lavender & purple mizuhiki pieces">
+          <img src="colorcategory_miyabi.jpg" alt="Miyabi - Lavender & purple mizuhiki pieces">
         </div>
         <div class="cat-info">
           <span class="cat-kanji">雅</span>
@@ -1441,10 +1468,10 @@ footer {
         <div class="p-img" style="background:#eaf4ee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="ID002-mori-bookmarks-photo.jpg" alt="Mori Bookmark">
+              <img src="ID001-mori-bookmarks-photo.jpg" alt="Mori Bookmark">
             </div>
             <div class="p-gallery-item">
-              <img src="ID002-mori-bookmarks-photo.jpg" alt="Mori Bookmark">
+              <img src="ID001-mori-bookmarks-photo.jpg" alt="Mori Bookmark">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1864,6 +1891,7 @@ footer {
   <p class="note">For questions about your order, please contact us through eBay messages or Instagram DM.</p>
 </section>
 
+
 <!-- CARE INSTRUCTIONS -->
 <section class="info-section" id="care">
   <h2>Care Instructions</h2>
@@ -1878,6 +1906,10 @@ footer {
   <p class="note">Each piece is handmade and unique. Small variations in color and shape are natural and part of the craft.</p>
 </section>
 
+<section class="info-section">
+  <p class="safety-note">Please note: Our items contain small parts. Keep out of reach of small children and pets.</p>
+</section>
+
 <!-- FAQ -->
 <section class="info-section alt" id="faq">
   <h2>Frequently Asked Questions</h2>
@@ -1885,12 +1917,10 @@ footer {
   <h3>Do you offer custom orders?</h3>
   <p>Yes! We love creating custom mizuhiki pieces. Send us a DM on Instagram with your ideas, preferred colors, and occasion. Custom orders typically take 2-3 weeks.</p>
   
-  <h3>Can I request gift wrapping?</h3>
-  <p>Absolutely. All items can be gift-wrapped upon request at no extra charge. Just let us know when you place your order.</p>
-  
+  <h3>Do you offer gift wrapping?</h3>
+<p>Each totoi piece is already carefully packaged, but we also offer a special gift wrapping option for an additional $5. Your item will be wrapped in Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Available as a separate listing in our shop.</p>
   <h3>Do you offer wholesale or bulk orders?</h3>
-  <p>Yes, we offer wholesale pricing for shops and bulk orders for events. Please contact us directly to discuss quantities and pricing.</p>
-  
+<p>No — totoi is a small independent studio, and each piece is made individually by hand. We do not offer bulk orders or wholesale at this time.</p>
   <h3>What is mizuhiki?</h3>
   <p>Mizuhiki is a traditional Japanese decorative cord art made from tightly wound washi paper. It has been used for centuries to tie gift envelopes and ceremonial items, symbolizing connection and celebration.</p>
   
@@ -1904,12 +1934,12 @@ footer {
   <p>Have questions about our mizuhiki pieces? Want to discuss a custom order? We'd love to hear from you.</p>
   
   <h3>Instagram DM (fastest response)</h3>
-  <a href="https://instagram.com/totoijapan" target="_blank" class="btn-contact">Message us on Instagram</a>
+  <a href="https://www.instagram.com/totoi_japan" target="_blank" class="btn-contact">Message us on Instagram</a>
   <p class="note">We usually reply within 24 hours</p>
   
   <h3>Email</h3>
   <p>You can also reach us by email:</p>
-  <span class="email-display">hello@totoijapan.com</span>
+  <span class="email-display">hello@totoijapan02.com</span>
   <p class="note">Please allow 1-2 business days for email responses</p>
 </section>
 
@@ -1926,7 +1956,7 @@ footer {
     <a href="#care">Care</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-    <a href="https://instagram.com/totoijapan" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/totoi_japan" target="_blank">Instagram</a>
     <a href="https://ebay.com" target="_blank">eBay Shop</a>
   </div>
   <div class="footer-copy">© 2025 totoi japan. All rights reserved.</div>
