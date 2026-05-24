@@ -455,7 +455,7 @@ nav a:hover { color: var(--crimson); }
 .btn-buy:hover { background: var(--crimson); color: var(--white); }
 
 /* ── CATEGORY GRID ── */
-.cat-grid {
+{
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* スマホも4列に */
   gap: 0.8rem; /* 隙間を小さく */
@@ -470,7 +470,7 @@ nav a:hover { color: var(--crimson); }
 
 .cat-card {
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
   align-items: center;
   background: var(--white);
   border: 1px solid var(--blush-light);
@@ -479,6 +479,7 @@ nav a:hover { color: var(--crimson); }
   text-decoration: none;
   transition: transform 0.22s, box-shadow 0.22s;
   cursor: pointer;
+  gap: 0.8rem;
 }
 .cat-card:hover {
   transform: translateY(-4px);
@@ -493,19 +494,20 @@ nav a:hover { color: var(--crimson); }
   margin-bottom: 1rem;
   box-shadow: 0 2px 8px rgba(30,48,104,0.1);
 }
-
 .cat-swatch {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* 正方形に */
+  width: 60px; /* 固定サイズ */
+  min-width: 60px; 
+  height: 60px; /* 固定サイズ */
+  flex-shrink: 0; /* 縮まないように */
   overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0; /* 削除 */
 }
 
 .cat-swatch img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* これは残す */
   display: block;
 }
 
@@ -556,11 +558,13 @@ nav a:hover { color: var(--crimson); }
   color: var(--text-mid);
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap; 
 }
 .cat-hint {
   font-size: 0.9rem;
   color: var(--text-light);
   font-weight: 400;
+  white-space: nowrap;
 }
 
 /* ── PHOTO PLACEHOLDER ── */
