@@ -445,10 +445,17 @@ nav a:hover { color: var(--crimson); }
 .btn-buy:hover { background: var(--crimson); color: var(--white); }
 
 /* ── CATEGORY GRID ── */
-.cat-grid {
+ .cat-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: repeat(2, 1fr); /* スマホ: 2列 */
+  gap: 1.5rem; /* そのまま */
+}
+
+/* パソコン: 4列に */
+@media (min-width: 768px) {
+  .cat-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;  /* ← 追加: 隙間を大きくしてみる */
 }
 
 .cat-card {
@@ -468,7 +475,7 @@ nav a:hover { color: var(--crimson); }
   box-shadow: 0 12px 30px rgba(184,37,90,0.1);
 }
 
-.cat-swatch {
+ {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 8px;
@@ -481,8 +488,14 @@ nav a:hover { color: var(--crimson); }
   height: 100%;
   object-fit: cover;
   display: block;
+}/* パソコン画面では画像を小さく表示 */
+@media (min-width: 768px) {
+  .cat-swatch img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+  }
 }
-
 .cat-info {
   display: flex;
   flex-direction: column;
@@ -516,7 +529,7 @@ nav a:hover { color: var(--crimson); }
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;.cat-swatch
   border: 2px dashed var(--blush-light);
 }
 .ph-label {
