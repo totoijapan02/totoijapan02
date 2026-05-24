@@ -248,6 +248,16 @@ nav a:hover { color: var(--crimson); }
   padding-bottom: 0.9rem;
   border-bottom: 1px solid var(--blush-light);
 }
+.section-head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-head h2 {
+  font-size: 2rem;
+  color: var(--navy);
+  font-weight: 600;
+}
 
 .section-num {
   font-family: 'Zen Maru Gothic', 'Nunito', sans-serif;
@@ -445,17 +455,17 @@ nav a:hover { color: var(--crimson); }
 .btn-buy:hover { background: var(--crimson); color: var(--white); }
 
 /* ── CATEGORY GRID ── */
- .cat-grid {
+.cat-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* スマホ: 2列 */
-  gap: 1.5rem; /* そのまま */
+  grid-template-columns: repeat(4, 1fr); /* スマホも4列に */
+  gap: 0.8rem; /* 隙間を小さく */
 }
 
-/* パソコン: 4列に */
 @media (min-width: 768px) {
   .cat-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;  /* ← 追加: 隙間を大きくしてみる */
+    gap: 1.5rem; /* パソコンは少し広めに */
+  }
 }
 
 .cat-card {
@@ -465,7 +475,7 @@ nav a:hover { color: var(--crimson); }
   background: var(--white);
   border: 1px solid var(--blush-light);
   border-radius: var(--radius);
-  padding: 1.4rem 1rem 1.2rem;
+  padding: 0.5rem 0.3rem;
   text-decoration: none;
   transition: transform 0.22s, box-shadow 0.22s;
   cursor: pointer;
@@ -482,6 +492,36 @@ nav a:hover { color: var(--crimson); }
   overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 0 2px 8px rgba(30,48,104,0.1);
+}
+
+.cat-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 正方形に */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.cat-swatch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cat-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 正方形に */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.cat-swatch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .cat-swatch img {
   width: 100%;
@@ -756,6 +796,12 @@ body { overflow-x: hidden; }
 <!-- SHOP: COLOUR CATEGORIES -->
 <section class="shop-section" id="shop">
   <div class="shop-inner">
+    
+    <!-- セクション見出しを追加 -->
+    <div class="section-head">
+      <h2>Shop by Colour</h2>
+    </div>
+    
     <div class="cat-grid">
 
       <a href="#cat-wata" class="cat-card">
@@ -763,7 +809,7 @@ body { overflow-x: hidden; }
           <img src="colorcategory_wata.jpg" alt="Wata - White & off-white mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">綿</span>
+         
           <span class="cat-name">Wata</span>
           <span class="cat-hint">white - cream</span>
         </div>
@@ -774,7 +820,8 @@ body { overflow-x: hidden; }
           <img src="colorcategory_hinata.jpg" alt="Hinata - Yellow & orange mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">日向</span>
+          
+          
           <span class="cat-name">Hinata</span>
           <span class="cat-hint">yellow - orange</span>
         </div>
@@ -785,7 +832,7 @@ body { overflow-x: hidden; }
           <img src="colorcategory_beni.jpg" alt="Beni - Red & pink mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">紅</span>
+          
           <span class="cat-name">Beni</span>
           <span class="cat-hint">red - pink</span>
         </div>
@@ -796,7 +843,8 @@ body { overflow-x: hidden; }
           <img src="colorcategory_azuki.jpg" alt="Azuki - Deep red & wine mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">小豆</span>
+          
+          
           <span class="cat-name">Azuki</span>
           <span class="cat-hint">deep red - purple</span>
         </div>
@@ -807,7 +855,8 @@ body { overflow-x: hidden; }
           <img src="colorcategory_mori.jpg" alt="Mori - Green & moss mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">森</span>
+         
+          
           <span class="cat-name">Mori</span>
           <span class="cat-hint">green - moss</span>
         </div>
@@ -818,7 +867,8 @@ body { overflow-x: hidden; }
           <img src="colorcategory_sora.jpg" alt="Sora - Blue & navy mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">空</span>
+          
+          
           <span class="cat-name">Sora</span>
           <span class="cat-hint">blue - navy</span>
         </div>
@@ -829,7 +879,8 @@ body { overflow-x: hidden; }
           <img src="colorcategory_kohaku.jpg" alt="Kohaku - Amber & brown mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">琥珀</span>
+          
+          
           <span class="cat-name">Kohaku</span>
           <span class="cat-hint">amber - brown</span>
         </div>
@@ -840,7 +891,8 @@ body { overflow-x: hidden; }
           <img src="colorcategory_miyabi.jpg" alt="Miyabi - Lavender & purple mizuhiki pieces">
         </div>
         <div class="cat-info">
-          <span class="cat-kanji">雅</span>
+        
+          
           <span class="cat-name">Miyabi</span>
           <span class="cat-hint">lavender - purple</span>
         </div>
