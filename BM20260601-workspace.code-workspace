@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"name": "BM-0001",
+			"path": "BM-0001"
+		},
+		{
+			"name": "ER-0003",
+			"path": "ER-0003"
+		},
+		{
+			"name": "BM-0007",
+			"path": "BM-0007"
+		},
+		{
+			"name": "BM-0008",
+			"path": "BM-0008"
+		},
+		{
+			"name": "BM-0002",
+			"path": "BM-0002"
+		},
+		{
+			"name": "BM-0003",
+			"path": "BM-0003"
+		},
+		{
+			"name": "BM-0004",
+			"path": "BM-0004"
+		},
+		{
+			"name": "BM-0005",
+			"path": "BM-0005"
+		},
+		{
+			"name": "BM-0006",
+			"path": "BM-0006"
+		}
+	],
+	"settings": {}
+}
