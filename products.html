@@ -250,7 +250,7 @@ nav a:hover { color: var(--crimson); }
 }
 @media (max-width: 600px) {
   .color-banner-strip {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -853,8 +853,7 @@ footer {
         </div>
       </div>
 
-      <!-- ここに他のカラーのEarringsを追加してください -->
-        <!-- ER-0004 BENI -->
+<!-- ER-0004 BENI -->
       <div class="p-card">
         <div class="p-img" style="background:#f5f3ee;">
           <div class="p-gallery">
@@ -873,7 +872,7 @@ footer {
           </div>
         </div>
         <div class="p-body">
-          <div class="p-name">BENI Earrings</div>
+          <div class="p-name">Beni Earrings</div>
           <div class="p-sub">Vibrant red mizuhiki with elegant silver details</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
@@ -882,94 +881,61 @@ footer {
         </div>
       </div>
 
-  <!-- ER-0007 HINATA -->
-<div class="p-card">
-  <div class="p-img" style="background:#f5f3ee;">
-    <div class="p-gallery">
-      <div class="p-gallery-item">
-        <img src="Earring_images/ER-0007_HINATA/ER-0007-1.jpg" alt="Earrings ER-0007">
+      <!-- ER-0007 HINATA -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0007_HINATA/ER-0007-1.jpg" alt="Earrings ER-0007">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0007_HINATA/ER-0007-2.jpg" alt="Earrings ER-0007">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Hinata Earrings</div>
+          <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
+          <div class="p-bottom">
+            <span class="p-price">$35</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
       </div>
-      <div class="p-gallery-item">
-        <img src="Earring_images/ER-0007_HINATA/ER-0007-2.jpg" alt="Earrings ER-0007">
+
+      <!-- ER-0010 AZUKI -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0010_AZUKI/ER-0010-1.jpg" alt="Earrings ER-0010">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0010_AZUKI/ER-0010-2.jpg" alt="Earrings ER-0010">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Azuki Earrings</div>
+          <div class="p-sub">Elegant burgundy mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$35</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
-    <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
-    <div class="p-gallery-dots">
-      <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
-      <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
-    </div>
-  </div>
-  <div class="p-body">
-    <div class="p-name">Hinata Earrings</div>
-    <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
-    <div class="p-bottom">
-      <span class="p-price">$35</span>
-      <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
-    </div>
-  </div>
-</div>
-
-
-<!-- ER-0010 AZUKI -->
-<div class="p-card">
-  <div class="p-img" style="background:#f5f3ee;">
-    <div class="p-gallery">
-      <div class="p-gallery-item">
-        <img src="Earring_images/ER-0010_A/ER-0010-1.jpg" alt="Earrings ER-0010">
-      </div>
-      <div class="p-gallery-item">
-        <img src="Earring_images/ER-0010_A/ER-0010-2.jpg" alt="Earrings ER-0010">
-      </div>
-    </div>
-    <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
-    <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
-    <div class="p-gallery-dots">
-      <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
-      <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
-    </div>
-  </div>
-  <div class="p-body">
-    <div class="p-name">Azuki Earrings</div>
-    <div class="p-sub">Elegant burgundy mizuhiki</div>
-    <div class="p-bottom">
-      <span class="p-price">$35</span>
-      <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
-    </div>
-  </div>
-</div>
-
-<!-- ER-0007 HINATA -->
-<div class="p-card">
-  <div class="p-img" style="background:#f5f3ee;">
-    <div class="p-gallery">
-      <div class="p-gallery-item">
-        <img src="Earring_images/ER-0007_H/ER-0007-1.jpg" alt="Earrings ER-0007">
-      </div>
-      <div class="p-gallery-item">
-        <img src="Earring_images/ER-0007_H/ER-0007-2.jpg" alt="Earrings ER-0007">
-      </div>
-    </div>
-    <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
-    <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
-    <div class="p-gallery-dots">
-      <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
-      <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
-    </div>
-  </div>
-  <div class="p-body">
-    <div class="p-name">Hinata Earrings</div>
-    <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
-    <div class="p-bottom">
-      <span class="p-price">$35</span>
-      <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
-    </div>
-  </div>
-</div>
-
-
-
-      <!-- 例: Hinata, Beni, Azuki, Mori, Sora, Kohaku, Miyabi のピアス -->
 
     </div>
   </div>
@@ -1015,92 +981,6 @@ footer {
       </div>
 
       <!-- ここに他のカラーのBookmarksを追加してください -->
-
-<!-- BM-0002 BENI -->
-      <div class="p-card">
-        <div class="p-img" style="background:#f5f3ee;">
-          <div class="p-gallery">
-            <div class="p-gallery-item">
-              <img src="Bookmark_images/BM-0003/BM-0003-2.jpg" alt="Bookmark BM-0001">
-            </div>
-            <div class="p-gallery-item">
-              <img src="Bookmark_images/BM-0001/BM-0001-1.jpg" alt="Bookmark BM-0001">
-            </div>
-          </div>
-          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
-          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
-          <div class="p-gallery-dots">
-            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
-            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
-          </div>
-        </div>
-        <div class="p-body">
-          <div class="p-name">BENI Bookmark</div>
-          <div class="p-sub">Cheerful bright pink mizuhiki</div>
-          <div class="p-bottom">
-            <span class="p-price">$25</span>
-            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
-          </div>
-        </div>
-      </div>
-
-<!-- BM-0003 MIYABI -->
-      <div class="p-card">
-        <div class="p-img" style="background:#f5f3ee;">
-          <div class="p-gallery">
-            <div class="p-gallery-item">
-              <img src="Bookmark_images/BM-0005/BM-0005-2.jpg" alt="Bookmark BM-0001">
-            </div>
-            <div class="p-gallery-item">
-              <img src="Bookmark_images/BM-0005/BM-0005-1.jpg" alt="Bookmark BM-0001">
-            </div>
-          </div>
-          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
-          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
-          <div class="p-gallery-dots">
-            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
-            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
-          </div>
-        </div>
-        <div class="p-body">
-          <div class="p-name">MIYABI Bookmark</div>
-          <div class="p-sub">Lavender & purple mizuhiki</div>
-          <div class="p-bottom">
-            <span class="p-price">$25</span>
-            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- BM-0007 MORI -->
-      <div class="p-card">
-        <div class="p-img" style="background:#f5f3ee;">
-          <div class="p-gallery">
-            <div class="p-gallery-item">
-              <img src="Bookmark_images/BM-0007/BM-0007-2.jpg" alt="Bookmark BM-0001">
-            </div>
-            <div class="p-gallery-item">
-              <img src="Bookmark_images/BM-0007/BM-0007-1.jpg" alt="Bookmark BM-0001">
-            </div>
-          </div>
-          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
-          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
-          <div class="p-gallery-dots">
-            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
-            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
-          </div>
-        </div>
-        <div class="p-body">
-          <div class="p-name">MORI Bookmark</div>
-          <div class="p-sub">Soft & calming matcha green mizuhiki</div>
-          <div class="p-bottom">
-            <span class="p-price">$25</span>
-            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
-          </div>
-        </div>
-      </div>
-
 
     </div>
   </div>
