@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>totoi japan — Shop by Product</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+* { max-width: 100%; box-sizing: border-box; }
+:root {
+  --crimson: #b8255a;
+  --crimson-deep: #8c1a42;
+  --blush: #e8a0b8;
+  --blush-light: #f7dfe8;
+  --blush-pale: #fdf0f4;
+  --navy: #1e3068;
+  --navy-soft: #3a4e8a;
+  --cream: #fdf8f5;
+  --cream-dark: #f5ece6;
+  --white: #fffcfa;
+  --text: #2a2420;
+  --text-mid: #7a6a65;
+  --text-light: #b0a09a;
+  --font: 'Nunito', sans-serif;
+  --radius: 18px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.f1 { animation: fadeUp 0.6s 0s ease both; }
+.f2 { animation: fadeUp 0.6s 0.12s ease both; }
+.f3 { animation: fadeUp 0.6s 0.24s ease both; }
+.f4 { animation: fadeUp 0.6s 0.36s ease both; }
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--blush-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.header-logo img {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.header-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.header-logo-text .brand {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.12em;
+}
+.header-logo-text .tagline {
+  font-size: 0.64rem;
+  font-weight: 400;
+  color: var(--crimson);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+nav { display: flex; gap: 1.6rem; align-items: center; }
+nav a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--crimson); }
+.ig-btn {
+  background: var(--blush-light);
+  color: var(--crimson) !important;
+  padding: 0.38rem 0.95rem;
+  border-radius: 999px;
+  font-weight: 500 !important;
+  font-size: 0.75rem !important;
+  transition: background 0.2s !important;
+}
+.ig-btn:hover { background: var(--blush) !important; color: var(--white) !important; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--white);
+  padding: 6rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero-logo-wrap { margin-bottom: 2rem; }
+.hero-logo-wrap img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 20px rgba(184,37,90,0.15));
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: var(--blush-pale);
+  color: var(--crimson);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 0.32rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+  margin-bottom: 1.2rem;
+}
+.hero h1 strong {
+  font-weight: 600;
+  color: var(--crimson);
+}
+.hero-desc {
+  max-width: 520px;
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.95;
+  margin-bottom: 2.2rem;
+  font-weight: 300;
+}
+.btn-main {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.82rem 2.1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-main:hover { background: var(--crimson); transform: translateY(-1px); }
+
+/* ── PHILOSOPHY ── */
+.philosophy {
+  background: var(--navy);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.philosophy-inner { max-width: 600px; margin: 0 auto; }
+.phil-eyebrow {
+  display: inline-block;
+  background: rgba(232,160,184,0.18);
+  color: var(--blush);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+}
+.philosophy h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
+}
+.philosophy p {
+  font-size: 0.9rem;
+  color: rgba(253,240,244,0.65);
+  line-height: 2;
+  font-weight: 300;
+}
+
+/* ── COLOR BANNER ── */
+.color-banner-section {
+  padding: 2.5rem 2rem;
+  background: var(--cream-dark);
+}
+.color-banner-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.color-banner-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.color-banner-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+.color-banner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.color-banner-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1.5px solid var(--blush-light);
+}
+.color-banner-item span {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 500;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .color-banner-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── PRODUCT NAV TABS ── */
+.product-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--blush-light);
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+}
+.product-nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  padding: 0 2rem;
+}
+.product-nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-mid);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.product-nav-tab:hover { color: var(--crimson); }
+.product-nav-tab.active {
+  color: var(--crimson);
+  border-bottom-color: var(--crimson);
+}
+.product-nav-tab .tab-count {
+  background: var(--blush-pale);
+  color: var(--crimson);
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+}
+
+/* ── SHOP SECTION ── */
+.shop-section {
+  padding: 4.5rem 2rem;
+  background: var(--cream);
+}
+.shop-section.alt { background: var(--cream-dark); }
+.shop-inner { max-width: 1080px; margin: 0 auto; }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--blush-light);
+}
+.section-head-left { display: flex; flex-direction: column; gap: 0.2rem; }
+.section-num {
+  font-family: 'Zen Maru Gothic', 'Nunito', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--blush);
+  text-transform: uppercase;
+}
+.section-head h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+.see-all {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--crimson);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: letter-spacing 0.2s;
+}
+.see-all:hover { letter-spacing: 0.18em; }
+
+/* ── PRODUCT GRID ── */
+.p-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+.p-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--blush-light);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.p-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(184,37,90,0.1);
+}
+.p-img {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+}
+.p-gallery {
+  display: flex;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+.p-gallery-item {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.p-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--navy);
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 5;
+  line-height: 1;
+}
+.p-card:hover .p-gallery-nav { opacity: 1; }
+.p-gallery-nav.prev { left: 8px; }
+.p-gallery-nav.next { right: 8px; }
+.p-gallery-nav:hover { background: rgba(255,255,255,1); }
+.p-gallery-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+.p-gallery-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.p-gallery-dot.active { background: rgba(255,255,255,0.95); }
+.p-img.sold::after {
+  content: 'SOLD';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.95);
+  color: var(--crimson);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 1rem 2.5rem;
+  border: 3px solid var(--crimson);
+  border-radius: 8px;
+  z-index: 10;
+}
+.p-img.sold { opacity: 0.6; }
+.p-body { padding: 1rem 1.1rem 1.2rem; }
+.p-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.22rem;
+  letter-spacing: 0.04em;
+}
+.p-sub {
+  font-size: 0.74rem;
+  color: var(--text-light);
+  margin-bottom: 0.7rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+.p-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+.p-price {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.btn-buy {
+  display: inline-block;
+  background: var(--blush-pale);
+  color: var(--crimson);
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.71rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+.btn-buy:hover { background: var(--crimson); color: var(--white); }
+
+/* ── COMING SOON CARD ── */
+.p-card-soon {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px dashed var(--blush-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-height: 280px;
+}
+.p-card-soon-inner {
+  text-align: center;
+  padding: 2rem;
+}
+.p-card-soon-inner .soon-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.4;
+}
+.p-card-soon-inner p {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ── INFO SECTIONS ── */
+.info-section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.info-section.alt { background: var(--white); }
+.info-section h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+.info-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--crimson);
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.04em;
+}
+.info-section p {
+  margin-bottom: 1rem;
+  line-height: 1.9;
+  color: var(--text);
+}
+.info-section ul { list-style: none; padding-left: 0; }
+.info-section li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  line-height: 1.8;
+}
+.info-section li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--blush);
+  font-weight: 700;
+}
+.info-section .btn-contact {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--crimson);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, transform 0.2s;
+}
+.info-section .btn-contact:hover {
+  background: var(--crimson-deep);
+  transform: translateY(-2px);
+}
+.info-section .note {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 1rem;
+  font-style: italic;
+}
+.info-section .email-display {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--blush-pale);
+  border: 1px solid var(--blush-light);
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-top: 0.5rem;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  padding: 3.5rem 2rem 2.5rem;
+  text-align: center;
+}
+.footer-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.8rem;
+}
+.footer-logo-wrap img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 50%;
+  opacity: 0.92;
+}
+.footer-brand {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.16em;
+}
+.footer-tagline {
+  font-size: 0.7rem;
+  color: rgba(253,240,244,0.4);
+  letter-spacing: 0.16em;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footer-links a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--blush);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-copy {
+  font-size: 0.66rem;
+  color: rgba(253,240,244,0.2);
+  letter-spacing: 0.1em;
+}
+.announce-bar {
+  background: var(--crimson);
+  color: #fffcfa;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.announce-bar span { opacity: 0.75; margin: 0 0.6rem; }
+.safety-note {
+  padding: 0 2em;
+  margin: -0.5em 0 1em;
+  font-size: 0.9em;
+  color: var(--text-mid);
+}
+
+@media (max-width: 600px) {
+  .header-logo-text { display: none; }
+  nav a:not(.ig-btn) { display: none; }
+  .product-nav-inner { padding: 0 0.5rem; }
+  .product-nav-tab { padding: 0.9rem 0.8rem; font-size: 0.73rem; }
+  .color-banner-item img { width: 56px; height: 56px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  Grand Opening Sale <span>—</span> Special prices to celebrate our launch
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="header-logo">
+    <img src="logo.jpg" alt="totoi japan logo">
+    <div class="header-logo-text">
+      <span class="brand">totoi japan</span>
+      <span class="tagline">Handcrafted Mizuhiki</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
+    <a href="https://www.instagram.com/totoi_japan" target="_blank" class="ig-btn">Instagram ↗</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-logo-wrap f1">
+    <img src="logo.jpg" alt="totoi japan">
+  </div>
+  <span class="hero-eyebrow f2">Handcrafted in Japan</span>
+  <h1 class="f3">The art of<br><strong>mizuhiki</strong></h1>
+  <p class="hero-desc f4">Mizuhiki is a traditional Japanese craft using twisted washi paper cord, shaped and knotted into intricate forms. Rooted in centuries of ceremony and gift-giving culture, it carries a quiet beauty that is distinctly Japanese.</p>
+  <a href="#shop" class="btn-main f4">Shop the collection</a>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="about">
+  <div class="philosophy-inner">
+    <span class="phil-eyebrow">Our philosophy</span>
+    <h2>"totoi" — precious, irreplaceable</h2>
+    <p>The word <em>totoi</em> means something precious that deserves care. We make each piece slowly and carefully by hand. No two pieces are ever the same.</p>
+    <p>Each item is crafted to be worn, used, or gifted with ease and joy.</p>
+    <p><span style="border: 1px solid var(--blush); border-radius: 999px; padding: 3px 12px; font-size: 0.75em; color: var(--blush); font-weight: 300; letter-spacing: 0.08em;">Hypoallergenic</span></p>
+    <p>Because we want everyone to feel comfortable wearing our pieces.</p>
+    <p>By making mizuhiki easy to wear and enjoy every day, we hope to pass this quiet Japanese tradition on to the next generation — one handmade piece at a time.</p>
+  </div>
+</section>
+
+<!-- COLOR BANNER (decorative) -->
+<div class="color-banner-section">
+  <div class="color-banner-inner">
+    <p class="color-banner-label">Our color palette</p>
+    <div class="color-banner-strip">
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_wata.jpg" alt="Wata">
+        <span>綿 Wata</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_hinata.jpg" alt="Hinata">
+        <span>日向 Hinata</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_beni.jpg" alt="Beni">
+        <span>紅 Beni</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_azuki.jpg" alt="Azuki">
+        <span>小豆 Azuki</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_mori.jpg" alt="Mori">
+        <span>森 Mori</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_sora.jpg" alt="Sora">
+        <span>空 Sora</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_kohaku.jpg" alt="Kohaku">
+        <span>琥珀 Kohaku</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_miyabi.jpg" alt="Miyabi">
+        <span>雅 Miyabi</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT NAV TABS -->
+<nav class="product-nav" id="shop">
+  <div class="product-nav-inner">
+    <a href="#earrings" class="product-nav-tab active">Earrings</a>
+    <a href="#bookmarks" class="product-nav-tab">Bookmarks</a>
+    <a href="#rings" class="product-nav-tab">Rings</a>
+  </div>
+</nav>
+
+<!-- ── EARRINGS ── -->
+<section class="shop-section" id="earrings">
+  <div class="shop-inner">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="section-num">ピアス — Earrings</p>
+        <h2>Earrings</h2>
+      </div>
+    </div>
+    <div class="p-grid">
+
+      <!-- ER-0001 Wata -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0001_W/ER-0001-1.jpg" alt="Earrings ER-0001">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0001_W/ER-0001-2.jpg" alt="Earrings ER-0001">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Wata Earrings</div>
+          <div class="p-sub">Cream and eye-catching gold mizuhiki with pink pearl accents</div>
+          <div class="p-bottom">
+            <span class="p-price">$35</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ER-0002 Wata -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0002_W/ER-0002-1.jpg" alt="Earrings ER-0002">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0002_W/ER-0002-2.jpg" alt="Earrings ER-0002">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Wata Earrings</div>
+          <div class="p-sub">Elegant white and silver mizuhiki with blue pearl accents</div>
+          <div class="p-bottom">
+            <span class="p-price">$35</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ER-0003 Wata -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0003_W/ER-0003-1.jpg" alt="Earrings ER-0003">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0003_W/ER-0003-2.jpg" alt="Earrings ER-0003">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Wata Earrings</div>
+          <div class="p-sub">Refined white & cream mizuhiki with silver accents and pink pearl details</div>
+          <div class="p-bottom">
+            <span class="p-price">$35</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ここに他のカラーのEarringsを追加してください -->
+        <!-- ER-0004 BENI -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0004_BENI/ER-0004-1.jpg" alt="Earrings ER-0004">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Earring_images/ER-0004_BENI/ER-0004-2.jpg" alt="Earrings ER-0004">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">BENI Earrings</div>
+          <div class="p-sub">Vibrant red mizuhiki with elegant silver details</div>
+          <div class="p-bottom">
+            <span class="p-price">$35</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+  <!-- ER-0007 HINATA -->
+<div class="p-card">
+  <div class="p-img" style="background:#f5f3ee;">
+    <div class="p-gallery">
+      <div class="p-gallery-item">
+        <img src="Earring_images/ER-0007_HINATA/ER-0007-1.jpg" alt="Earrings ER-0007">
+      </div>
+      <div class="p-gallery-item">
+        <img src="Earring_images/ER-0007_HINATA/ER-0007-2.jpg" alt="Earrings ER-0007">
+      </div>
+    </div>
+    <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+    <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+    <div class="p-gallery-dots">
+      <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+      <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+    </div>
+  </div>
+  <div class="p-body">
+    <div class="p-name">Hinata Earrings</div>
+    <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
+    <div class="p-bottom">
+      <span class="p-price">$35</span>
+      <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ER-0010 AZUKI -->
+<div class="p-card">
+  <div class="p-img" style="background:#f5f3ee;">
+    <div class="p-gallery">
+      <div class="p-gallery-item">
+        <img src="Earring_images/ER-0010_A/ER-0010-1.jpg" alt="Earrings ER-0010">
+      </div>
+      <div class="p-gallery-item">
+        <img src="Earring_images/ER-0010_A/ER-0010-2.jpg" alt="Earrings ER-0010">
+      </div>
+    </div>
+    <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+    <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+    <div class="p-gallery-dots">
+      <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+      <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+    </div>
+  </div>
+  <div class="p-body">
+    <div class="p-name">Azuki Earrings</div>
+    <div class="p-sub">Elegant burgundy mizuhiki</div>
+    <div class="p-bottom">
+      <span class="p-price">$35</span>
+      <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+    </div>
+  </div>
+</div>
+
+<!-- ER-0007 HINATA -->
+<div class="p-card">
+  <div class="p-img" style="background:#f5f3ee;">
+    <div class="p-gallery">
+      <div class="p-gallery-item">
+        <img src="Earring_images/ER-0007_H/ER-0007-1.jpg" alt="Earrings ER-0007">
+      </div>
+      <div class="p-gallery-item">
+        <img src="Earring_images/ER-0007_H/ER-0007-2.jpg" alt="Earrings ER-0007">
+      </div>
+    </div>
+    <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+    <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+    <div class="p-gallery-dots">
+      <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+      <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+    </div>
+  </div>
+  <div class="p-body">
+    <div class="p-name">Hinata Earrings</div>
+    <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
+    <div class="p-bottom">
+      <span class="p-price">$35</span>
+      <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+    </div>
+  </div>
+</div>
+
+
+
+      <!-- 例: Hinata, Beni, Azuki, Mori, Sora, Kohaku, Miyabi のピアス -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKMARKS ── -->
+<section class="shop-section alt" id="bookmarks">
+  <div class="shop-inner">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="section-num">しおり — Bookmarks</p>
+        <h2>Bookmarks</h2>
+      </div>
+    </div>
+    <div class="p-grid">
+
+      <!-- BM-0001 Wata -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0001/BM-0001-2.jpg" alt="Bookmark BM-0001">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0001/BM-0001-1.jpg" alt="Bookmark BM-0001">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Wata Bookmark</div>
+          <div class="p-sub">Adorable white & creamy multicolor mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$25</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ここに他のカラーのBookmarksを追加してください -->
+
+<!-- BM-0002 BENI -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0003/BM-0003-2.jpg" alt="Bookmark BM-0001">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0001/BM-0001-1.jpg" alt="Bookmark BM-0001">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">BENI Bookmark</div>
+          <div class="p-sub">Cheerful bright pink mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$25</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+<!-- BM-0003 MIYABI -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0005/BM-0005-2.jpg" alt="Bookmark BM-0001">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0005/BM-0005-1.jpg" alt="Bookmark BM-0001">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">MIYABI Bookmark</div>
+          <div class="p-sub">Lavender & purple mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$25</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- BM-0007 MORI -->
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0007/BM-0007-2.jpg" alt="Bookmark BM-0001">
+            </div>
+            <div class="p-gallery-item">
+              <img src="Bookmark_images/BM-0007/BM-0007-1.jpg" alt="Bookmark BM-0001">
+            </div>
+          </div>
+          <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
+          <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
+          <div class="p-gallery-dots">
+            <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
+            <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">MORI Bookmark</div>
+          <div class="p-sub">Soft & calming matcha green mizuhiki</div>
+          <div class="p-bottom">
+            <span class="p-price">$25</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ── RINGS ── -->
+<section class="shop-section" id="rings">
+  <div class="shop-inner">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="section-num">リング — Rings</p>
+        <h2>Rings</h2>
+      </div>
+    </div>
+    <div class="p-grid">
+
+      <!-- Coming soon placeholder -->
+      <div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+      <div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+      <div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+
+      <!-- 写真が準備できたらここに追加してください -->
+      <!--
+      <div class="p-card">
+        <div class="p-img" style="background:#f5f3ee;">
+          <div class="p-gallery">
+            <div class="p-gallery-item">
+              <img src="Ring_images/RG-0001/RG-0001-1.jpg" alt="Ring">
+            </div>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Ring Name</div>
+          <div class="p-sub">Description here</div>
+          <div class="p-bottom">
+            <span class="p-price">$XX</span>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
+          </div>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </div>
+</section>
+
+<!-- SHIPPING & RETURNS -->
+<div id="shipping">
+<div class="info-section">
+  <h2>Shipping &amp; Returns</h2>
+
+  <h3>Shipping</h3>
+  <ul>
+    <li><strong>Ships from:</strong> Japan</li>
+    <li><strong>Estimated delivery:</strong> 1–3 weeks depending on your location (international shipping)</li>
+    <li><strong>Tracking:</strong> All orders include tracking numbers</li>
+  </ul>
+
+  <h3>Returns &amp; Exchanges</h3>
+  <p>We follow Etsy's return policy. Please see individual product listings on our Etsy shop for detailed return information.</p>
+
+  <h3>Contact</h3>
+  <p>For questions about your order, please contact us through Etsy messages or Instagram DM.</p>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="info-section alt" id="about-section">
+  <h2>About totoi japan</h2>
+  <p>We are a small handmade accessories brand based in Japan, specializing in mizuhiki — a traditional Japanese cord-knotting craft.</p>
+  <p>Mizuhiki has been used in Japan for centuries as a form of gift-wrapping and ceremonial decoration. We take this ancient tradition and reinterpret it into wearable, everyday accessories.</p>
+  <p>Every piece is made slowly by hand. We hope each item carries a little bit of that care with it.</p>
+</div>
+
+<!-- CARE INSTRUCTIONS -->
+<div class="info-section">
+  <h2>Care Instructions</h2>
+  <p>Mizuhiki is made from washi paper cord — a delicate and beautiful material that deserves gentle handling.</p>
+
+  <h3>Earrings</h3>
+  <ul>
+    <li>Avoid water, sweat, and humidity.</li>
+    <li>Store in the pouch provided.</li>
+    <li>Handle the mizuhiki portions with care — avoid bending or crushing.</li>
+  </ul>
+
+  <h3>Bookmarks</h3>
+  <ul>
+    <li>Keep dry and away from direct sunlight for extended periods.</li>
+    <li>Avoid excessive pressure that could flatten the mizuhiki knots.</li>
+  </ul>
+
+  <h3>General</h3>
+  <p>All earring hooks and ring bases used in our pieces are hypoallergenic. With proper care, your mizuhiki piece will stay beautiful for a long time.</p>
+  <p><strong>⚠ Safety notice:</strong> Our pieces contain small parts. Please keep out of reach of young children and pets.</p>
+</div>
+
+<!-- FAQ -->
+<div class="info-section alt">
+  <h2>FAQ</h2>
+
+  <h3>What is mizuhiki?</h3>
+  <p>Mizuhiki is a traditional Japanese art form using cords made from twisted washi (Japanese paper). The cords are knotted, shaped, and layered to create intricate designs. It has been used in Japan for over a thousand years in gift-giving and ceremonies.</p>
+
+  <h3>Are the earrings suitable for sensitive ears?</h3>
+  <p>Yes — all metal parts used in our earrings are hypoallergenic. We want everyone to be able to enjoy wearing them comfortably.</p>
+
+  <h3>Are two pieces exactly the same?</h3>
+  <p>No two pieces are exactly alike, because every item is made by hand. Small variations in shape and colour are a natural part of the craft — and what makes each piece uniquely yours.</p>
+
+  <h3>Can I request a custom order?</h3>
+  <p>We'd love to hear about it. Please reach out via the contact form or message us on eBay.</p>
+</div>
+
+<!-- CONTACT -->
+<div class="info-section" id="contact">
+  <h2>Contact</h2>
+  <p>We'd love to hear from you — whether you have a question about an item, a custom request, or just want to say hello.</p>
+
+  <h3>Message us on eBay</h3>
+  <p>The easiest way to reach us is through the eBay messaging system on any of our listings.</p>
+
+  <h3>Email</h3>
+  <p>You can also reach us directly:</p>
+  <span class="email-display">totoi.japan@gmail.com</span>
+
+  <h3>Instagram</h3>
+  <p>Follow us for new pieces, behind-the-scenes and a peek into the world of mizuhiki.</p>
+  <a href="https://www.instagram.com/totoi_japan" target="_blank" class="btn-contact">@totoi_japan ↗</a>
+
+  <p class="note">We're a small operation and reply as quickly as we can — usually within 1–2 days.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo-wrap">
+    <img src="logo.jpg" alt="totoi japan">
+    <span class="footer-brand">totoi japan</span>
+    <span class="footer-tagline">Handcrafted Mizuhiki</span>
+  </div>
+  <div class="footer-links">
+    <a href="#shop">Shop</a>
+    <a href="#about-section">About</a>
+    <a href="#shipping">Shipping</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
+    <a href="https://www.instagram.com/totoi_japan" target="_blank">Instagram ↗</a>
+  </div>
+  <p class="footer-copy">© 2025 totoi japan. All rights reserved. Handmade in Japan.</p>
+</footer>
+
+<script>
+function moveGallery(btn, dir) {
+  const card = btn.closest('.p-img');
+  const gallery = card.querySelector('.p-gallery');
+  const items = gallery.querySelectorAll('.p-gallery-item');
+  const dots = card.querySelectorAll('.p-gallery-dot');
+  let current = 0;
+  const transform = gallery.style.transform;
+  if (transform) {
+    const match = transform.match(/-?([\d.]+)%/);
+    if (match) current = Math.round(parseFloat(match[1]) / 100);
+  }
+  current = (current + dir + items.length) % items.length;
+  gallery.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function goToSlide(dot, idx) {
+  const card = dot.closest('.p-img');
+  const gallery = card.querySelector('.p-gallery');
+  const dots = card.querySelectorAll('.p-gallery-dot');
+  gallery.style.transform = `translateX(-${idx * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+// タブのアクティブ状態をスクロールに合わせて更新
+const tabs = document.querySelectorAll('.product-nav-tab');
+const sections = ['earrings', 'bookmarks', 'rings'];
+
+window.addEventListener('scroll', () => {
+  let current = sections[0];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 200) current = id;
+  });
+  tabs.forEach(tab => {
+    const href = tab.getAttribute('href').replace('#', '');
+    tab.classList.toggle('active', href === current);
+  });
+});
+</script>
+
+</body>
+</html>
