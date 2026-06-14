@@ -8,7 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
 :root {
   --crimson: #b8255a;
   --crimson-deep: #8c1a42;
@@ -168,7 +171,7 @@ nav a:hover { color: var(--crimson); }
 }
 
 .hero-desc {
-  max-width: 420px;
+  max-width: 520px;
   font-size: 0.92rem;
   color: var(--text-mid);
   line-height: 1.95;
@@ -198,7 +201,7 @@ nav a:hover { color: var(--crimson); }
 }
 
 .philosophy-inner {
-  max-width: 540px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -791,7 +794,7 @@ body { overflow-x: hidden; }
   </div>
   <span class="hero-eyebrow f2">Handcrafted in Japan</span>
   <h1 class="f3">The art of<br><strong>mizuhiki</strong></h1>
-  <p class="hero-desc f4">Each piece is hand-tied with traditional Japanese washi cord — a quiet craft turned into something you can wear, carry, and give.</p>
+  <p class="hero-desc f4">Mizuhiki is a traditional Japanese craft using twisted washi paper cord, shaped and knotted into intricate forms. Rooted in centuries of ceremony and gift-giving culture, it carries a quiet beauty that is distinctly Japanese. Mizuhiki can take countless forms — and with every piece we make, we hope to share just a glimpse of its endless possibility.</p>
   <a href="#shop" class="btn-main f4">Shop the collection</a>
 </section>
 
@@ -800,17 +803,21 @@ body { overflow-x: hidden; }
   <div class="philosophy-inner">
     <span class="phil-eyebrow">Our philosophy</span>
     <h2>"totoi" — precious, irreplaceable</h2>
-    <p>The word <em>totoi</em> means something precious that deserves care. We make each piece slowly and carefully by hand. No two pieces are ever the same. Each item is crafted with care — made to be worn, used, or gifted with ease and joy.</p>
+    <p>The word <em>totoi</em> means something precious that deserves care. We make each piece slowly and carefully by hand. No two pieces are ever the same.</p>
+    <p>Each item is crafted to be worn, used, or gifted with ease and joy.</p>
+    <p><span style="border: 1px solid var(--blush); border-radius: 999px; padding: 3px 12px; font-size: 0.75em; color: var(--blush); font-weight: 300; letter-spacing: 0.08em;">Hypoallergenic</span></p>
+    <p>Because we want everyone to feel comfortable wearing our pieces.</p>
+    <p>By making mizuhiki easy to wear and enjoy every day, we hope to pass this quiet Japanese tradition on to the next generation — one handmade piece at a time.</p>
   </div>
 </section>
 
-<!-- SHOP: COLOUR CATEGORIES -->
+<!-- SHOP: Color　 CATEGORIES -->
 <section class="shop-section" id="shop">
   <div class="shop-inner">
     
     <!-- セクション見出しを追加 -->
     <div class="section-head">
-      <h2>Shop by Colour</h2>
+      <h2>Shop by Color　</h2>
     </div>
     
     <div class="cat-grid">
@@ -921,7 +928,7 @@ body { overflow-x: hidden; }
         <p class="section-num">綿 — White &amp; off-white</p>
         <h2>Wata</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -940,10 +947,10 @@ body { overflow-x: hidden; }
           <div class="p-gallery">
             <div class="p-gallery-item">
               <!-- 写真1: wata-earrings-01-photo1.jpg に変更してください -->
-              <img src="Earring_images/ER-0001/ER-0001-1.jpg " alt="Wata Earrings">
+              <img src="Earring_images/ER-0001_W/" alt="Wata Earrings">
             </div>
             <div class="p-gallery-item">
-             <img src="Earring_images/ER-0001/ER-0001-2.jpg " alt="Wata Earrings">
+             <img src="Earring_images/ER-0001_W/ER-0001-2.jpg " alt="Wata Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -957,10 +964,10 @@ body { overflow-x: hidden; }
           <!-- 商品名（自由に変更OK） -->
           <div class="p-name">Wata Earrings</div>
           <!-- 説明文（自由に変更OK） -->
-          <div class="p-sub">Delicate white mizuhiki with blue & gold pearls</div>
+          <div class="p-sub">Cream and eye-catching gold mizuhiki with pink pearl accents </div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -970,10 +977,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5f3ee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0002/ER-0002-1.jpg" alt="Wata Earrings">
+              <img src="Earring_images/ER-0002_W/ER-0002-1.jpg" alt="Wata Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0002/ER-0002-2.jpg" alt="Wata Earrings">
+              <img src="Earring_images/ER-0002_W/ER-0002-2.jpg" alt="Wata Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -988,7 +995,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Elegant white and silver mizuhiki with blue pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -998,10 +1005,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5f3ee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0003/ER-0003-1.jpg" alt="Wata Earrings">
+              <img src="Earring_images/ER-0003_W/ER-0003-1.jpg" alt="Wata Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0003/ER-0003-2.jpg" alt="Wata Earrings">
+              <img src="Earring_images/ER-0003_W/ER-0003-2.jpg" alt="Wata Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1013,10 +1020,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Wata Earrings</div>
-          <div class="p-sub">White & cream mizuhiki</div>
+          <div class="p-sub">Refined white & cream mizuhiki with silver accents and pink pearl details</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1041,10 +1048,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Wata Bookmark</div>
-          <div class="p-sub">White & creamy multicolor mizuhiki</div>
+          <div class="p-sub">Adorable white & creamy multicolor mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1061,7 +1068,7 @@ body { overflow-x: hidden; }
         <p class="section-num">日向 — Yellow & golden</p>
         <h2>Hinata</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -1070,10 +1077,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#fdf6e3;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-               <img src="Earring_images/ER-0008/ER-0008-1.jpg" alt="Hinata Earrings">
+               <img src="Earring_images/ER-0008_H/ER-0008-1.jpg" alt="Hinata Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0008/ER-0008-2.jpg" alt="Hinata Earrings">
+              <img src="Earring_images/ER-0008_H/ER-0008-2.jpg" alt="Hinata Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1085,10 +1092,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Hinata Earrings</div>
-          <div class="p-sub">Yellow & gold mizuhiki</div>
+          <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1098,10 +1105,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#fdf6e3;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0007/ER-0007-1.jpg" alt="Hinata Earrings">
+              <img src="Earring_images/ER-0007_H/ER-0007-1.jpg" alt="Hinata Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0007/ER-0007-2.jpg" alt="Hinata Earrings">
+              <img src="Earring_images/ER-0007_H/ER-0007-2.jpg" alt="Hinata Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1113,10 +1120,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Hinata Earrings</div>
-          <div class="p-sub">Yellow & gold mizuhiki</div>
+          <div class="p-sub">Vibrant orange mizuhiki with silver charm</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1126,13 +1133,13 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#fdf6e3;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0009/ER-0009-1.jpg" alt="Hinata Earrings">
+              <img src="Earring_images/ER-0009_H/ER-0009-1.jpg" alt="Hinata Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0009/ER-0009-2.jpg" alt="Hinata Earrings">
+              <img src="Earring_images/ER-0009_H/ER-0009-2.jpg" alt="Hinata Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0009/ER-0009-3.jpg" alt="Hinata Earrings">
+              <img src="Earring_images/ER-0009_H/ER-0009-3.jpg" alt="Hinata Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1148,7 +1155,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Asymmetric design with vibrant yellow & gold mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1172,10 +1179,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Hinata Bookmark</div>
-          <div class="p-sub">Yellow & gold mizuhiki</div>
+          <div class="p-sub">Cute yellow bookmark with playful "tama-musubi" knots</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1193,7 +1200,7 @@ body { overflow-x: hidden; }
         <p class="section-num">紅 — Red & pink</p>
         <h2>Beni</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -1202,10 +1209,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#fdeef3;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0004/ER-0004-1.jpg" alt="Beni Earrings">
+              <img src="Earring_images/ER-0004_B/ER-0004-1.jpg" alt="Beni Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0004/ER-0004-2.jpg" alt="Beni Earrings">
+              <img src="Earring_images/ER-0004_B/ER-0004-2.jpg" alt="Beni Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1220,7 +1227,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Charming white & pink mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1230,10 +1237,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#fdeef3;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0005/ER-0005-1.jpg" alt="Beni Earrings">
+              <img src="Earring_images/ER-0005_B/ER-0005-1.jpg" alt="Beni Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0005/ER-0005-2.jpg" alt="Beni Earrings">
+              <img src="Earring_images/ER-0005_B/ER-0005-2.jpg" alt="Beni Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1248,7 +1255,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Luxurious deep red mizuhiki with gold pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1258,10 +1265,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#fdeef3;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0006/ER-0006-1.jpg" alt="Beni Earrings">
+              <img src="Earring_images/ER-0006_B/ER-0006-1.jpg" alt="Beni Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0006/ER-0006-2.jpg" alt="Beni Earrings">
+              <img src="Earring_images/ER-0006_B/ER-0006-2.jpg" alt="Beni Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1276,7 +1283,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Delicate sweet pink & white mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1304,7 +1311,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Cheerful bright pink mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1322,7 +1329,7 @@ body { overflow-x: hidden; }
         <p class="section-num">小豆 — Deep red & burgundy</p>
         <h2>Azuki</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -1331,10 +1338,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5eaee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-             <img src="Earring_images/ER-0010/ER-0010-1.jpg" alt="Azuki Earrings">
+             <img src="Earring_images/ER-0010_A/ER-0010-1.jpg" alt="Azuki Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0010/ER-0010-2.jpg" alt="Azuki Earrings">
+              <img src="Earring_images/ER-0010_A/ER-0010-2.jpg" alt="Azuki Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1349,7 +1356,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Elegant burgundy mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1359,10 +1366,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5eaee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0011/ER-0011-1.jpg" alt="Azuki Earrings">
+              <img src="Earring_images/ER-0011_A/ER-0011-1.jpg" alt="Azuki Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0011/ER-0011-2.jpg" alt="Azuki Earrings">
+              <img src="Earring_images/ER-0011_A/ER-0011-2.jpg" alt="Azuki Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1374,10 +1381,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Azuki Earrings</div>
-          <div class="p-sub">Elegant burgundy and creammizuhiki</div>
+          <div class="p-sub">Elegant burgundy & cream mizuhiki with azuki color pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1387,10 +1394,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5eaee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0012/ER-0012-1.jpg" alt="Azuki Earrings">
+              <img src="Earring_images/ER-0012_A/ER-0012-1.jpg" alt="Azuki Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0012/ER-0012-2.jpg" alt="Azuki Earrings">
+              <img src="Earring_images/ER-0012_A/ER-0012-2.jpg" alt="Azuki Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1402,10 +1409,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Azuki Earrings</div>
-          <div class="p-sub">Elegant azuki red & gold mizuhiki</div>
+          <div class="p-sub">Elegant azuki red mizuhiki with stunning gold accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1430,10 +1437,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Azuki Bookmark</div>
-          <div class="p-sub">Deep red & burgundy</div>
+          <div class="p-sub">Deep red & burgundy with delicate gold details</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1451,7 +1458,7 @@ body { overflow-x: hidden; }
         <p class="section-num">森 — Green & moss</p>
         <h2>Mori</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -1460,10 +1467,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#eaf4ee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-             <img src="Earring_images/ER-0015/ER-0015-1.jpg" alt="Mori Earrings"> 
+             <img src="Earring_images/ER-0015_M/ER-0015-1.jpg" alt="Mori Earrings"> 
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0015/ER-0015-2.jpg" alt="Mori Earrings">
+              <img src="Earring_images/ER-0015_M/ER-0015-2.jpg" alt="Mori Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1475,10 +1482,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Mori Earrings</div>
-          <div class="p-sub">Pop & fresh green mizuhiki</div>
+          <div class="p-sub">Fresh & summery green and white mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1489,11 +1496,11 @@ body { overflow-x: hidden; }
           <div class="p-gallery">
             <div class="p-gallery-item">
               
-              <img src="Earring_images/ER-0016/ER-0016-1.jpg" alt="Mori Earrings">
+              <img src="Earring_images/ER-0016_M/ER-0016-1.jpg" alt="Mori Earrings">
             </div>
             <div class="p-gallery-item">
               
-              <img src="Earring_images/ER-0016/ER-0016-2.jpg" alt="Mori Earrings">
+              <img src="Earring_images/ER-0016_M/ER-0016-2.jpg" alt="Mori Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1505,10 +1512,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Mori Earrings</div>
-          <div class="p-sub">Chic green & white mizuhiki</div>
+          <div class="p-sub">Chic lime green & white mizuhiki with golden accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1518,10 +1525,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#eaf4ee;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0017/ER-0017-1.jpg" alt="Mori Earrings">
+              <img src="Earring_images/ER-0018_M/ER-0018-1.jpg" alt="Mori Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0017/ER-0017-2.jpg" alt="Mori Earrings">
+              <img src="Earring_images/ER-0018_M/ER-0018-2.jpg" alt="Mori Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1536,7 +1543,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Light green mizuhiki with pink pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1561,10 +1568,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Mori Bookmark</div>
-          <div class="p-sub">White and pink pearls with fresh green mizuhiki</div>
+          <div class="p-sub">Soft & calming matcha green mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1582,7 +1589,7 @@ body { overflow-x: hidden; }
         <p class="section-num">空 — Blue & navy</p>
         <h2>Sora</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -1591,10 +1598,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#eaeff8;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0013/ER-0013-1.jpg" alt="Sora Earrings">
+              <img src="Earring_images/ER-0013_S/ER-0013-1.jpg" alt="Sora Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0013/ER-0013-2.jpg" alt="Sora Earrings">
+              <img src="Earring_images/ER-0013_S/ER-0013-2.jpg" alt="Sora Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1606,10 +1613,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Sora Earrings</div>
-          <div class="p-sub">Cool blue mizuhiki with silver charm</div>
+          <div class="p-sub">Ice blue mizuhiki with silver charm</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1619,10 +1626,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#eaeff8;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-             <img src="Earring_images/ER-0014/ER-0014-1.jpg" alt="Sora Earrings">
+             <img src="Earring_images/ER-0014_S/ER-0014-1.jpg" alt="Sora Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0014/ER-0014-2.jpg" alt="Sora Earrings">
+              <img src="Earring_images/ER-0014_S/ER-0014-2.jpg" alt="Sora Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1637,7 +1644,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Crisp blue & white mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1647,10 +1654,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#eaeff8;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-  <div class="photo-placeholder"><span class="ph-label">Coming Soon</span></div>
+   <img src="Earring_images/ER-0015_S/ER-0015-1.jpg" alt="Sora Earrings">
 </div>
             <div class="p-gallery-item">
-  <div class="photo-placeholder"><span class="ph-label">Coming Soon</span></div>
+  <img src="Earring_images/ER-0015_S/ER-0015-2.jpg" alt="Sora Earrings">
 </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1665,7 +1672,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Blue & navy mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1690,10 +1697,10 @@ body { overflow-x: hidden; }
         </div>
         <div class="p-body">
           <div class="p-name">Sora Bookmark</div>
-          <div class="p-sub">Blue & navy mizuhiki</div>
+          <div class="p-sub">Deep & moody blue mizuhiki with azuki red pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1710,7 +1717,7 @@ body { overflow-x: hidden; }
        <p class="section-num">琥珀 — Amber & taupe</p>
         <h2>Kohaku</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -1719,10 +1726,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5eedf;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0020/ER-0020-1.jpg" alt="Kohaku Earrings">
+              <img src="Earring_images/ER-0019_K/ER-0019-1.jpg" alt="Kohaku Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0020/ER-0020-2.jpg" alt="Kohaku Earrings">
+              <img src="Earring_images/ER-0019_K/ER-0019-2.jpg" alt="Kohaku Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1737,7 +1744,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Sophisticated taupe & gold mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1747,10 +1754,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5eedf;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-               <img src="Earring_images/ER-0020/ER-0020-1.jpg" alt="Kohaku Earrings">
+               <img src="Earring_images/ER-0020_K/ER-0020-1.jpg" alt="Kohaku Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0020/ER-0020-2.jpg" alt="Kohaku Earrings">
+              <img src="Earring_images/ER-0020_K/ER-0020-2.jpg" alt="Kohaku Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1765,7 +1772,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Graceful brown & gold mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1775,10 +1782,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f5eedf;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0020/ER-0020-1.jpg" alt="Kohaku Earrings">
+              <img src="Earring_images/ER-0023_K/ER-0023-1.jpg" alt="Kohaku Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0020/ER-0020-2.jpg" alt="Kohaku Earrings">
+              <img src="Earring_images/ER-0023_K/ER-0023-2.jpg" alt="Kohaku Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1793,7 +1800,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Amber & taupe mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1821,7 +1828,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Amber & taupe mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1838,7 +1845,7 @@ body { overflow-x: hidden; }
         <p class="section-num">雅 — Lavender &amp; purple</p>
         <h2>Miyabi</h2>
       </div>
-      <a href="#shop" class="see-all">← All colours</a>
+      <a href="#shop" class="see-all">← All Color　s</a>
     </div>
     <div class="p-grid">
       
@@ -1847,10 +1854,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f3eef8;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0021/ER-0021-1.jpg" alt="Miyabi Earrings">
+              <img src="Earring_images/ER-0021_MB/ER-0021-1.jpg" alt="Miyabi Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0021/ER-0021-2.jpg" alt="Miyabi Earrings">
+              <img src="Earring_images/ER-0021_MB/ER-0021-2.jpg" alt="Miyabi Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1865,7 +1872,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Lavender & purple mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1875,10 +1882,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f3eef8;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0021/ER-0021-1.jpg" alt="Miyabi Earrings">
+              <img src="Earring_images/ER-0022_MB/ER-0022-1.jpg" alt="Miyabi Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0021/ER-0021-2.jpg" alt="Miyabi Earrings">
+              <img src="Earring_images/ER-0022_MB/ER-0022-2.jpg" alt="Miyabi Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1893,7 +1900,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Chic lavender & purple mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1903,10 +1910,10 @@ body { overflow-x: hidden; }
         <div class="p-img" style="background:#f3eef8;">
           <div class="p-gallery">
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0021/ER-0021-1.jpg" alt="Miyabi Earrings">
+              <img src="Earring_images/ER-0021_MB/ER-0021-1.jpg" alt="Miyabi Earrings">
             </div>
             <div class="p-gallery-item">
-              <img src="Earring_images/ER-0021/ER-0021-2.jpg" alt="Miyabi Earrings">
+              <img src="Earring_images/ER-0021_MB/ER-0021-2.jpg" alt="Miyabi Earrings">
             </div>
           </div>
           <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
@@ -1921,7 +1928,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Lavender & purple mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1949,7 +1956,7 @@ body { overflow-x: hidden; }
           <div class="p-sub">Lavender & purple mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://ebay.com" target="_blank" class="btn-buy">View on eBay</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1996,9 +2003,9 @@ body { overflow-x: hidden; }
   <p>Yes! We love creating custom mizuhiki pieces. Send us a DM on Instagram with your ideas, preferred colors, and occasion. Custom orders typically take 2-3 weeks.</p>
   
   <h3>Do you offer gift wrapping?</h3>
-<p>Each totoi piece is already carefully packaged, but we also offer a special gift wrapping option for an additional $5. Your item will be wrapped in Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Available as a separate listing in our shop.</p>
+<p>Each totoi piece is already carefully packaged, but we also offer a special gift wrapping option for an additional $4. Your item will be wrapped in Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Available as a separate listing in our shop.</p>
  <h3>Do you offer gift wrapping?</h3>
-<p>Each totoi piece is already carefully packaged, but we also offer a special gift wrapping option for an additional $5. Your item will be wrapped in Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Available as a separate listing in our shop.</p>
+<p>Each totoi piece is already carefully packaged, but we also offer a special gift wrapping option for an additional $4. Your item will be wrapped in Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Available as a separate listing in our shop.</p>
 
 <div class="p-img" style="background:#f5f3ee; max-width:400px; margin:20px auto;">
   <div class="p-gallery">
@@ -2097,6 +2104,26 @@ function goToSlide(dot, index) {
     d.classList.toggle('active', i === index);
   });
 }
+// タッチスワイプ対応
+document.querySelectorAll('.p-gallery').forEach(gallery => {
+  let startX = 0;
+  let isDragging = false;
+
+  gallery.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  gallery.addEventListener('touchend', e => {
+    if (!isDragging) return;
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      const button = gallery.closest('.p-card').querySelector(diff > 0 ? '.next' : '.prev');
+      if (button) button.click();
+    }
+    isDragging = false;
+  });
+});
 </script>
 
 </body>
