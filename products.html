@@ -254,6 +254,9 @@ nav a:hover { color: var(--crimson); }
   }
 }
 /* ── BACK BUTTON ── */
+#shop-top {
+  scroll-margin-top: 100px;
+}
 .btn-back {
   display: inline-block;
   font-size: 0.75rem;
@@ -667,7 +670,7 @@ footer {
 
 @media (max-width: 600px) {
   .header-logo-text { display: none; }
-  nav a:not(.ig-btn) { display: none; }
+  header nav a:not(.ig-btn) { display: none; }
   .product-nav-inner { padding: 0 0.5rem; }
   .product-nav-tab { padding: 0.9rem 0.8rem; font-size: 0.73rem; }
   .color-banner-item img { width: 56px; height: 56px; }
@@ -675,6 +678,7 @@ footer {
 </style>
 </head>
 <body>
+
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce-bar">
@@ -692,7 +696,7 @@ footer {
   </a>
   <nav>
     <a href="index.html">Home</a>
-    <a href="#shop">Shop</a>
+    <a href="#shop-top">Shop</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
     <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
@@ -707,9 +711,9 @@ footer {
   </div>
   <span class="hero-eyebrow f2">Handcrafted in Japan</span>
   <h1 class="f3">The art of<br><strong>mizuhiki</strong></h1>
-  <p class="hero-desc f4">Mizuhiki is a traditional Japanese craft — twisted washi paper cord, shaped and knotted into intricate forms. It is said to carry the power to connect people and ward off negative energy. </p>
+  <p class="hero-desc f4">Mizuhiki is a traditional Japanese craft — twisted washi paper cord, shaped and knotted into intricate forms. It is said to carry the power to connect people, ward off negative energy, and bring good luck.</p>
   <p class="hero-desc f4">In our collection, we mainly celebrate the <em>Ume-musubi</em>, a knot inspired by the delicate plum blossom, alongside other traditional forms.</p>
-  <a href="#shop" class="btn-main f4">Shop the collection</a>
+  <a href="#shop-top" class="btn-main f4">Shop the collection</a>
 </section>
 
 <!-- PHILOSOPHY -->
@@ -765,6 +769,7 @@ footer {
 </div>
 
 <!-- PRODUCT NAV TABS -->
+ <div id="shop-top"></div>
 <nav class="product-nav" id="shop">
   <div class="product-nav-inner">
     <a href="#earrings" class="product-nav-tab active">Earrings</a>
@@ -781,7 +786,7 @@ footer {
         <p class="section-num">ピアス — Earrings</p>
         <h2>Earrings</h2>
       </div>
-      <a href="#shop" class="btn-back">↑ Back to top</a>
+      <a href="#shop-top" class="btn-back">↑ Back to top</a>
     </div>
     <div class="p-grid">
 
@@ -998,7 +1003,7 @@ footer {
         <p class="section-num">しおり — Bookmarks</p>
         <h2>Bookmarks</h2>
       </div>
-      <a href="#shop" class="btn-back">↑ Back to top</a>
+      <a href="#shop-top" class="btn-back">↑ Back to top</a>
     </div>
     <div class="p-grid">
 
@@ -1237,7 +1242,7 @@ footer {
         <p class="section-num">指輪 — Rings</p>
         <h2>Rings</h2>
       </div>
-      <a href="#shop" class="btn-back">↑ Back to top</a>
+      <a href="#shop-top" class="btn-back">↑ Back to top</a>
     </div>
     <div class="p-grid">
 
@@ -1309,9 +1314,10 @@ footer {
 <!-- ABOUT -->
 <div class="info-section alt" id="about-section">
   <h2>About totoi japan</h2>
-  <p>We are a small handmade accessories brand based in Japan, specializing in mizuhiki — a traditional Japanese cord-knotting craft rooted in centuries of ceremony and gift-giving culture.</p>
-  <p>We take this ancient tradition and reinterpret it into wearable, everyday accessories.</p>
-  <p>Every piece is made slowly by hand — which means no two are exactly alike. We hope each item carries a little bit of that care with it — and perhaps, a small connection between us.</p>
+  <p>We are a small handmade brand based in Japan — two women, crafting each piece with care and intention.</p>
+  <p>We take this ancient tradition and reinterpret it into wearable, everyday pieces.
+Every piece is made slowly by hand — which means no two are exactly alike. </p>
+  <p>We hope each item carries a little bit of that care with it — and perhaps, a small connection between us.</p>
 </div>
 
 <!-- SAFE FOR SENSITIVE SKIN -->
@@ -1341,7 +1347,8 @@ footer {
   <h2>Frequently Asked Questions</h2>
 
    <h3>What is mizuhiki?</h3>
-  <p>Mizuhiki is a traditional Japanese decorative cord art made from tightly wound washi paper. It has been used for centuries to tie gift envelopes and ceremonial items, symbolizing connection and celebration.</p>
+  <p>For over 1,400 years, mizuhiki has adorned gifts and ceremonial offerings across Japan. Once tied, the knot never comes undone — carrying with it a quiet wish for lasting bonds, good fortune, and protection.
+At totoi japan, we are drawn to the Ume-musubi — a knot said to strengthen bonds, ward off negative energy, and invite better fortune into one's life.</p>
   
   <h3>Do you offer custom orders?</h3>
   <p>Yes! We love creating custom mizuhiki pieces. Send us a DM on Instagram with your ideas, preferred colors, and occasion. Custom orders typically take 2-3 weeks.</p>
@@ -1383,7 +1390,8 @@ footer {
 <!-- CONTACT -->
 <section class="info-section" id="contact">
   <h2>Get in Touch</h2>
-  <p>Have questions about our mizuhiki pieces? Want to discuss a custom order? We'd love to hear from you.</p>
+  <p>Have questions about our mizuhiki pieces? </p>
+  <p>Want to discuss a custom order? We'd love to hear from you.</p>
   
   <h3>Instagram DM (fastest response)</h3>
   <a href="https://www.instagram.com/totoi_japan" target="_blank" class="btn-contact">Message us on Instagram</a>
@@ -1403,7 +1411,7 @@ footer {
     <span class="footer-tagline">Japanese mizuhiki, handcrafted with care</span>
   </div>
   <div class="footer-links">
-    <a href="#shop">Shop</a>
+    <a href="#shop-top">Shop</a>
     <a href="#about-section">About</a>
     <a href="#shipping">Shipping</a>
     <a href="#contact">Contact</a>
