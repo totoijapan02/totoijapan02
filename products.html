@@ -495,8 +495,6 @@ nav a:hover { color: var(--crimson); }
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1;
-  min-height: 280px;
 }
 .p-card-soon-inner {
   text-align: center;
@@ -514,7 +512,17 @@ nav a:hover { color: var(--crimson); }
   text-transform: uppercase;
   font-weight: 500;
 }
-
+.p-card-soon-rings {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px dashed var(--blush-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-height: 380px;
+}
 /* ── INFO SECTIONS ── */
 .info-section {
   padding: 4rem 2rem;
@@ -750,7 +758,6 @@ footer {
   <h1 class="f3">The art of<br><strong>mizuhiki</strong></h1>
   <p class="hero-desc f4">Mizuhiki is a traditional Japanese craft — twisted washi paper cord, shaped and knotted into intricate forms. It is said to carry the power to connect people, ward off negative energy, and bring good luck.</p>
   <p class="hero-desc f4">In our collection, we mainly celebrate the <em>Ume-musubi</em>, a knot inspired by the delicate plum blossom, alongside other traditional forms.</p>
-  <a href="#shop-top" class="btn-main f4">Shop the collection</a>
 </section>
 
 <!-- PHILOSOPHY -->
@@ -776,7 +783,28 @@ footer {
     <a href="#rings" class="product-nav-tab">Rings</a>
   </div>
 </nav>
-
+<!-- ── EARRINGS ── -->
+<section class="shop-section" id="earrings">
+  <div class="shop-inner">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="section-num">ピアス — Earrings</p>
+        <h2>Earrings</h2>
+      </div>
+    </div>
+   <!-- 色選択ボタン -->
+    <div class="color-nav">
+      <a href="#cat-wata" class="btn-buy">綿 — WATA</a>
+      <a href="#cat-hinata" class="btn-buy">日向 — HINATA</a>
+      <a href="#cat-beni" class="btn-buy">紅 — BENI</a>
+      <a href="#cat-azuki" class="btn-buy">小豆 — AZUKI</a>
+      <a href="#cat-mori" class="btn-buy">森 — MORI</a>
+      <a href="#cat-sora" class="btn-buy">空 — SORA</a>
+      <a href="#cat-kohaku" class="btn-buy">琥珀 — KOHAKU</a>
+      <a href="#cat-miyabi" class="btn-buy">雅 — MIYABI</a>
+    </div>
+  </div>
+</section>
 <!-- CAT: WATA -->
 <section class="shop-section alt" id="cat-wata">
   <div class="shop-inner">
@@ -872,7 +900,12 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -976,7 +1009,15 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
@@ -1076,7 +1117,15 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
@@ -1176,7 +1225,15 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
@@ -1276,7 +1333,15 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
@@ -1376,7 +1441,15 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
@@ -1476,7 +1549,15 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
@@ -1576,7 +1657,15 @@ footer {
           </div>
         </div>
       </div>
-
+<div class="p-card-soon">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
@@ -1840,25 +1929,30 @@ footer {
     <div class="p-grid">
 
       <!-- Coming soon placeholder -->
-      <div class="p-card-soon">
+      <div class="p-card-soon-rings">
         <div class="p-card-soon-inner">
           <div class="soon-icon">🌸</div>
           <p>Coming soon</p>
         </div>
       </div>
-      <div class="p-card-soon">
+      <div class="p-card-soon-rings">
         <div class="p-card-soon-inner">
           <div class="soon-icon">🌸</div>
           <p>Coming soon</p>
         </div>
       </div>
-      <div class="p-card-soon">
+      <div class="p-card-soon-rings">
         <div class="p-card-soon-inner">
           <div class="soon-icon">🌸</div>
           <p>Coming soon</p>
         </div>
       </div>
-
+<div class="p-card-soon-rings">
+        <div class="p-card-soon-inner">
+          <div class="soon-icon">🌸</div>
+          <p>Coming soon</p>
+        </div>
+      </div>
       <!-- 写真が準備できたらここに追加してください -->
       <!--
       <div class="p-card">
@@ -1916,18 +2010,28 @@ footer {
 Every piece is made slowly by hand — which means no two are exactly alike. </p>
   <p>We hope each item carries a little bit of that care with it — and perhaps, a small connection between us.</p>
   
-  <!-- 本文の後ろの2枚の写真（横並び） -->
+<!-- 本文の後ろの2枚の写真（横並び） -->
 <div class="about-images">
   <div class="about-image-item">
     <img src="member photos/yoko.jpeg" alt="Yoko" class="about-image">
-    <p class="about-image-name">Yoko</p>
+    <p class="about-image-name">yoko</p>
   </div>
+
+  <!-- ロゴ -->
+  <img src="logo.jpg" alt="totoi japan" style="width:60px; height:60px; border-radius:50%; object-fit:contain; align-self:center; opacity:0.7;">
+
   <div class="about-image-item">
     <img src="member photos/mami.jpeg" alt="Mami" class="about-image">
-    <p class="about-image-name">Mami</p>
+    <p class="about-image-name">mami</p>
   </div>
 </div>
+</div>
 
+<div style="text-align:center; margin-top:2rem;">
+  <a href="#shop-top" class="btn-main f4">Shop the collection</a>
+</div>
+
+<!-- SAFE FOR SENSITIVE SKIN -->
 <!-- SAFE FOR SENSITIVE SKIN -->
 <div class="info-section" id="sensitive-skin-section">
   <h2>Safe for Sensitive Skin</h2>
@@ -2069,6 +2173,7 @@ window.addEventListener('scroll', () => {
     tab.classList.toggle('active', href === current);
   });
 });
+}
 </script>
 
 </body>
