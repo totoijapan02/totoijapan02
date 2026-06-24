@@ -224,10 +224,7 @@ nav a:hover { color: var(--crimson); }
   color: var(--crimson) !important;
   border-color: var(--crimson);
 }
-</style>
 
-</head>
-<body>
 <!-- COLOR BANNER -->
 <div class="color-banner-section">
   <div class="color-banner-inner">
@@ -269,9 +266,6 @@ nav a:hover { color: var(--crimson); }
   </div>
 </div>
 
-
-</head>
-<body>
 /* ── PRODUCT NAV TABS ── */
 .product-nav {
   background: var(--white);
@@ -622,7 +616,16 @@ nav a:hover { color: var(--crimson); }
   font-size: 0.9em;
   color: var(--text-mid);
 }
+<style>
+  /* 最初のCSS */
+  body { ... }
+  header { ... }
+  .p-card { ... }
 
+
+
+/* About のCSS */
+/* About のCSS */
 .about-image {
   width: 200px;
   height: 200px;
@@ -700,54 +703,113 @@ footer {
   color: rgba(253,240,244,0.2);
   letter-spacing: 0.1em;
 }
-@media (max-width: 600px) {
+
+
+  /* ── SMARTPHONE RESPONSIVE ── */
+  @media (max-width: 600px) {
     /* Header */
     .header-logo-text { display: none; }
     nav a:not(.ig-btn) { display: none; }
     
     /* Product Nav */
+    .product-nav { display: block !important; }
     .product-nav-inner { padding: 0 1rem; }
-    .product-nav-tab { padding: 0.8rem 1rem; font-size: 0.95rem; gap: 0.3rem; }
+    .product-nav-tab {
+      padding: 0.8rem 1rem;
+      font-size: 0.95rem;
+      gap: 0.3rem;
+    }
     
     /* Section Head */
-    .section-head { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    .section-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
     .section-head-left { width: 100%; }
     
     /* Product Grid */
-    .p-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+    .p-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+    }
     
     /* Product Card */
     .p-card { border-radius: 14px; }
     .p-body { padding: 0.8rem 0.9rem 1rem; }
-    .p-name { font-size: 0.78rem; font-weight: 600; margin-bottom: 0.15rem; word-wrap: break-word; overflow-wrap: break-word; }
-    .p-sub { font-size: 0.68rem; margin-bottom: 0.5rem; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word; }
+    .p-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    .p-sub {
+      font-size: 0.68rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
     .p-bottom { gap: 0.4rem; }
-    .p-price { font-size: 0.95rem; flex-shrink: 0; }
-    .btn-buy { padding: 0.35rem 0.8rem; font-size: 0.65rem; flex-shrink: 0; }
+    .p-price {
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .btn-buy {
+      padding: 0.35rem 0.8rem;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
     
-    /* Gallery */
-    .p-gallery-nav { width: 28px; height: 28px; font-size: 1.2rem; }
+    /* Gallery Navigation */
+    .p-gallery-nav {
+      width: 28px;
+      height: 28px;
+      font-size: 1.2rem;
+    }
     .p-gallery-nav.prev { left: 4px; }
     .p-gallery-nav.next { right: 4px; }
-    .p-gallery-dots { bottom: 6px; gap: 4px; }
-    .p-gallery-dot { width: 5px; height: 5px; }
     
-    /* Info */
+    /* Gallery Dots */
+    .p-gallery-dots { bottom: 6px; gap: 4px; }
+    .p-gallery-dot {
+      width: 5px;
+      height: 5px;
+    }
+    
+    /* Info Sections */
     .info-section { padding: 3rem 1.5rem; }
     .info-section h2 { font-size: 1.4rem; }
     .info-section h3 { font-size: 1rem; }
     
-    /* Gift Wrap */
-    .gift-wrap-images { flex-direction: column; gap: 1.5rem !important; }
-    .gift-wrap-images figure { flex: 1 !important; min-width: auto !important; }
-    .gift-wrap-images img { max-width: 100% !important; width: 100% !important; max-height: 300px !important; }
+    /* Gift Wrap Images */
+    .gift-wrap-images {
+      flex-direction: column;
+      gap: 1.5rem !important;
+    }
+    .gift-wrap-images figure {
+      flex: 1 !important;
+      min-width: auto !important;
+    }
+    .gift-wrap-images img {
+      max-width: 100% !important;
+      width: 100% !important;
+      max-height: 300px !important;
+    }
     
-    /* About */
-    .about-images { flex-direction: column; gap: 1.5rem; }
+    /* About Images */
+    .about-images {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
     .about-image { width: 150px; height: 150px; }
     
     /* Footer */
-    .footer-links { flex-direction: column; gap: 1rem; }
+    .footer-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 
   .color-nav {
@@ -1714,14 +1776,14 @@ footer {
 
 
 <!-- CAT: Bookmarks -->
-<section class="shop-section" id="cat-bookmarks">
+<section class="shop-section" id="bookmarks">
   <div class="shop-inner">
     <div class="section-head">
-      <div>
+      <div class="section-head-left">
         <p class="section-num">しおり — Bookmarks</p>
         <h2>Bookmarks</h2>
       </div>
-      <a href="#shop" class="see-all">← All Colors</a>
+      <a href="#shop-top" class="btn-back">↑ Back to top</a>
     </div>
     <div class="p-grid">
 
@@ -2107,25 +2169,15 @@ At totoi japan, we are drawn to the Ume-musubi — a knot said to strengthen bon
   <h3>Do you offer gift wrapping?</h3>
 <p>Each totoi piece is already carefully packaged, but we also offer a special gift wrapping option for an additional $4. Your item will be wrapped in beautiful Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Available as a separate listing in our shop.</p>
  
-<div class="p-img" style="background:#f5f3ee; max-width:400px; margin:20px auto;">
-  <div class="p-gallery">
-    <div class="p-gallery-item">
-      <img src="giftwrapped_pink.jpg" alt="Gift Wrapping">
-    </div>
-    <div class="p-gallery-item">
-      <img src="giftwrapping/GW-001-2.jpg" alt="Gift Wrapping">
-    </div>
-    <div class="p-gallery-item">
-      <img src="giftwrapping/GW-001-3.jpg" alt="Gift Wrapping">
-    </div>
-  </div>
-  <button class="p-gallery-nav prev" onclick="moveGallery(this, -1)">‹</button>
-  <button class="p-gallery-nav next" onclick="moveGallery(this, 1)">›</button>
-  <div class="p-gallery-dots">
-    <span class="p-gallery-dot active" onclick="goToSlide(this, 0)"></span>
-    <span class="p-gallery-dot" onclick="goToSlide(this, 1)"></span>
-    <span class="p-gallery-dot" onclick="goToSlide(this, 2)"></span>
-  </div>
+<div class="gift-wrap-images" style="display: flex; gap: 2rem; justify-content: center; max-width: 700px; margin: 2rem auto; flex-wrap: wrap;">
+  <figure style="flex: 1; min-width: 250px; text-align: center; margin: 0;">
+    <img src="giftwrapped_pink.jpg" alt="Pink Gift Wrapping" style="width: 100%; max-width: 300px; border-radius: 8px;">
+    <figcaption style="font-size: 0.85rem; color: var(--text-mid); margin-top: 0.8rem; font-weight: 500;">Earrings and Bookmarks</figcaption>
+  </figure>
+  <figure style="flex: 1; min-width: 250px; text-align: center; margin: 0;">
+    <img src="giftwrapped_blue.jpg" alt="Blue Gift Wrapping" style="width: 100%; max-width: 300px; border-radius: 8px;">
+    <figcaption style="font-size: 0.85rem; color: var(--text-mid); margin-top: 0.8rem; font-weight: 500;">Rings</figcaption>
+  </figure>
 </div>
 
 
@@ -2212,6 +2264,7 @@ window.addEventListener('scroll', () => {
     tab.classList.toggle('active', href === current);
   });
 });
+}
 </script>
 
 </body>
