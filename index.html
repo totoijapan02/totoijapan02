@@ -2450,8 +2450,10 @@ if (document.readyState === 'loading') {
 
 const tabs = document.querySelectorAll('.product-nav-tab');
 const sections = ['earrings', 'bookmarks', 'rings'];
+const floatBtn = document.querySelector('.btn-back-float');
 
 window.addEventListener('scroll', () => {
+  // タブのアクティブ状態更新
   let current = sections[0];
   sections.forEach(id => {
     const el = document.getElementById(id);
@@ -2462,14 +2464,13 @@ window.addEventListener('scroll', () => {
     tab.classList.toggle('active', href === current);
   });
   
-  // フロートボタンの表示制御
-  const floatBtn = document.querySelector('.btn-back-float');
-  if (window.scrollY > 300) {
+  // フロートボタンの表示制御（シンプル版）
+  if (window.scrollY > 100) {
     floatBtn.classList.add('show');
   } else {
     floatBtn.classList.remove('show');
   }
-});
+}, { passive: true });
 </script>
 
 </body>
