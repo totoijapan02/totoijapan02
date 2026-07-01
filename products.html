@@ -225,64 +225,52 @@ nav a:hover { color: var(--crimson); }
   border-color: var(--crimson);
 }
 
-/* Earrings Back to top is mobile-only */
-#earrings .btn-back {
-  display: none;
-}
-
-@media (max-width: 600px) {
-  #earrings .btn-back { display: inline-block; }
-  
-  /* Color Nav */
-  .color-nav {
-    padding: 1.5rem 1rem;
-    gap: 0.6rem;
-    justify-content: center;
-  }
-}
-
-/* ── FLOATING BACK TO TOP BUTTON ── */
-.btn-back-float {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  background: var(--navy);
-  color: var(--white) !important;
-  padding: 0.7rem 1rem;
-  border: none;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(184,37,90,0.15);
-  transition: opacity 0.3s, transform 0.2s;
-}
-.btn-back-float.show {
-  display: block;
-  opacity: 1;
-}
-.btn-back-float:hover {
-  background: var(--crimson);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(184,37,90,0.25);
-}
-
-</style>
-
-<style>
+<!-- COLOR BANNER -->
+<div class="color-banner-section">
+  <div class="color-banner-inner">
+    <p class="color-banner-label">Our color palette</p>
+    <div class="color-banner-strip">
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_wata.jpg" alt="Wata">
+        <span>綿 Wata</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_hinata.jpg" alt="Hinata">
+        <span>日向 Hinata</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_beni.jpg" alt="Beni">
+        <span>紅 Beni</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_azuki.jpg" alt="Azuki">
+        <span>小豆 Azuki</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_mori.jpg" alt="Mori">
+        <span>森 Mori</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_sora.jpg" alt="Sora">
+        <span>空 Sora</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_kohaku.jpg" alt="Kohaku">
+        <span>琥珀 Kohaku</span>
+      </div>
+      <div class="color-banner-item">
+        <img src="colorcategory/colorcategory_miyabi.jpg" alt="Miyabi">
+        <span>雅 Miyabi</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 /* ── PRODUCT NAV TABS ── */
 .product-nav {
   background: var(--white);
   border-bottom: 1px solid var(--blush-light);
   z-index: 90;
-  height: auto;
 }
 .product-nav-inner {
   max-width: 1080px;
@@ -628,16 +616,12 @@ nav a:hover { color: var(--crimson); }
   font-size: 0.9em;
   color: var(--text-mid);
 }
+<style>
   /* 最初のCSS */
-  body {
-  font-family: var(--font);
-  margin: 0;
-  padding: 0;
-  background: var(--cream);
-  color: var(--text);
-  font-weight: 400;
-  line-height: 1.8;
-}
+  body { ... }
+  header { ... }
+  .p-card { ... }
+
 
 
 /* About のCSS */
@@ -721,258 +705,18 @@ footer {
 }
 
 
-  /* ── SMARTPHONE RESPONSIVE ── */
+  /* ← ここに @media */
   @media (max-width: 600px) {
-    /* Header */
     .header-logo-text { display: none; }
-    nav a:not(.ig-btn) { display: none; }
-    
-    /* Product Nav */
-    .product-nav { display: block !important; height: auto; }
-    .product-nav-inner { padding: 0 1rem; }
-    .product-nav-tab {
-    padding: 0.6rem 0.8rem;
-      font-size: 0.8rem;
-      gap: 0.2rem;
-    }
-    /* Shop Collection Button */
-    .shop-collection-button-section {
-      text-align: center;
-      padding: 1.5rem 1rem;
-    }
-
-    .btn-shop-collection {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background: var(--navy) !important;
-      color: var(--white);
-      border: none;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .btn-shop-collection:active {
-      background: var(--navy);
-      transform: scale(0.98);
-    }
-    /* Section Head */
-    .section-head {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.4rem;
-    }
-    .section-head-left { width: 100%; }
-    
-    /* Product Grid */
-    .p-grid {
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1rem;
-    }
-    
-    /* Product Card */
-    .p-card { border-radius: 14px; }
-    .p-body { padding: 0.8rem 0.9rem 1rem; }
-    .p-name {
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 0.15rem;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-    .p-sub {
-      font-size: 0.68rem;
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-    .p-bottom { gap: 0.4rem; }
-    .p-price {
-      font-size: 0.95rem;
-      flex-shrink: 0;
-    }
-    .btn-buy {
-      padding: 0.35rem 0.8rem;
-      font-size: 0.65rem;
-      flex-shrink: 0;
-    }
-    
-    /* Gallery Navigation */
-    .p-gallery-nav {
-      width: 28px;
-      height: 28px;
-      font-size: 1.2rem;
-    }
-    .p-gallery-nav.prev { left: 4px; }
-    .p-gallery-nav.next { right: 4px; }
-    
-    /* Gallery Dots */
-    .p-gallery-dots { bottom: 6px; gap: 4px; }
-    .p-gallery-dot {
-      width: 5px;
-      height: 5px;
-    }
-    
-    /* Info Sections */
-    .info-section { padding: 3rem 1.5rem; }
-    .info-section h2 { font-size: 1.4rem; }
-    .info-section h3 { font-size: 1rem; }
-    
-    /* Gift Wrap Images */
-    .gift-wrap-images {
-      flex-direction: column;
-      gap: 1.5rem !important;
-    }
-    .gift-wrap-images figure {
-      flex: 1 !important;
-      min-width: auto !important;
-    }
-    .gift-wrap-images img {
-      max-width: 100% !important;
-      width: 100% !important;
-      max-height: 300px !important;
-    }
-    
-    /* About Images */
-    .about-images {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
- /* Floating Back to Top - Mobile */
-    .btn-back-float {
-      top: 80px !important;
-      background: rgba(173, 216, 230, 0.4) !important;
-      color: var(--navy) !important;
-    }
-/* Footer */
-.footer-links {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
+    ...
   }
-/* デスクトップではフロートボタンを非表示 */
-@media (min-width: 601px) {
-  .btn-back-float {
-    display: none !important;
-  }
-}
 
-/* ── COLOR BANNER ── */
-.color-banner-section {
-  background: var(--white);
-  padding: 3rem 2rem;
-}
-.color-banner-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-.color-banner-label {
-  text-align: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-mid);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
-.color-banner-strip {
+  .color-nav {
   display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  justify-content: center;
   flex-wrap: wrap;
-  padding: 0 1rem;
-}
-.color-banner-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  flex: 0 0 auto;
-  text-align: center;
-}
-.color-banner-item img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--blush-light);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.color-banner-item img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(184,37,90,0.12);
-}
-.color-banner-item span {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-
-/* Color banner responsive */
-@media (max-width: 600px) {
-  .color-banner-section { display: none; }
-}
-
-/* ── MOBILE CATEGORY NAV ── */
-.category-nav-mobile {
-  display: none;
-  background: var(--white);
-  padding: 1.5rem 1rem;
-  border-bottom: 1px solid var(--blush-light);
-}
-.category-nav-mobile-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   gap: 0.8rem;
-}
-.category-nav-mobile-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-mid);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
-  text-align: center;
-}
-.category-nav-mobile-buttons {
-  display: flex;
-  gap: 0.6rem;
+  padding: 1.5rem 2rem;
   justify-content: center;
-  flex-wrap: wrap;
-}
-.category-nav-mobile-btn {
-  display: inline-block;
-  padding: 0.65rem 1.2rem;
-  background: var(--blush-pale);
-  color: var(--crimson);
-  border: 2px solid transparent;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  text-align: center;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-.category-nav-mobile-btn:active {
-  background: var(--crimson);
-  color: var(--white);
-}
-
-@media (max-width: 600px) {
-  .category-nav-mobile { display: block; }
 }
 
 </style>
@@ -985,9 +729,6 @@ footer {
 <div class="announce-bar">
   Grand Opening Sale <span>—</span> Special prices to celebrate our launch
 </div>
-
-<!-- FLOATING BACK TO TOP BUTTON -->
-<a href="#shop-top" class="btn-back-float">↑TOP</a>
 
 <!-- HEADER -->
 <header>
@@ -1003,7 +744,7 @@ footer {
     <a href="#shop-top">Shop</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
-    <a href="https://totoijapan.etsy.com" target="_blank">Etsy ↗</a>
+    <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
     <a href="https://www.instagram.com/totoi_japan" target="_blank" class="ig-btn">Instagram ↗</a>
   </nav>
 </header>
@@ -1030,61 +771,12 @@ footer {
   </div>
 </section>
 
-<!-- COLOR BANNER -->
-<div class="color-banner-section">
-  <div class="color-banner-inner">
-    <p class="color-banner-label">Our color palette</p>
-    <div class="color-banner-strip">
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_wata.jpg" alt="Wata">
-        <span>綿 Wata</span>
-      </div>
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_hinata.jpg" alt="Hinata">
-        <span>日向 Hinata</span>
-      </div>
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_beni.jpg" alt="Beni">
-        <span>紅 Beni</span>
-      </div>
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_azuki.jpg" alt="Azuki">
-        <span>小豆 Azuki</span>
-      </div>
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_mori.jpg" alt="Mori">
-        <span>森 Mori</span>
-      </div>
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_sora.jpg" alt="Sora">
-        <span>空 Sora</span>
-      </div>
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_kohaku.jpg" alt="Kohaku">
-        <span>琥珀 Kohaku</span>
-      </div>
-      <div class="color-banner-item">
-        <img src="colorcategory/colorcategory_miyabi.jpg" alt="Miyabi">
-        <span>雅 Miyabi</span>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- MOBILE CATEGORY NAV -->
-<div id="shop-top" class="category-nav-mobile">
-  <div class="category-nav-mobile-inner">
-    <p class="category-nav-mobile-label">Shop by category</p>
-    <div class="category-nav-mobile-buttons">
-      <a href="#earrings" class="category-nav-mobile-btn">Earrings</a>
-      <a href="#bookmarks" class="category-nav-mobile-btn">Bookmarks</a>
-      <a href="#rings" class="category-nav-mobile-btn">Rings</a>
-    </div>
-  </div>
-</div>
+
 
 <!-- PRODUCT NAV TABS -->
-<nav class="product-nav">
+ <div id="shop-top"></div>
+<nav class="product-nav" id="shop">
   <div class="product-nav-inner">
     <a href="#earrings" class="product-nav-tab active">Earrings</a>
     <a href="#bookmarks" class="product-nav-tab">Bookmarks</a>
@@ -1099,7 +791,6 @@ footer {
         <p class="section-num">ピアス — Earrings</p>
         <h2>Earrings</h2>
       </div>
-      <a href="#shop-top" class="btn-back">↑ Back to top</a>
     </div>
    <!-- 色選択ボタン -->
     <div class="color-nav">
@@ -1122,7 +813,7 @@ footer {
         <p class="section-num">綿 — White &amp; off-white</p>
         <h2>Wata</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1149,7 +840,7 @@ footer {
           <div class="p-sub">Cream and gold mizuhiki with delicate Japanese cotton pearls and pink pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1177,7 +868,7 @@ footer {
           <div class="p-sub">Elegant white and silver mizuhiki with blue pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1205,7 +896,7 @@ footer {
           <div class="p-sub">Refined white & cream mizuhiki with silver accents and pink pearl details</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1227,7 +918,7 @@ footer {
         <p class="section-num">日向 — Yellow & golden</p>
         <h2>Hinata</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1254,7 +945,7 @@ footer {
           <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1282,7 +973,7 @@ footer {
           <div class="p-sub">Vibrant orange mizuhiki with silver charm</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1314,7 +1005,7 @@ footer {
           <div class="p-sub">Asymmetric design with vibrant yellow & gold mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1327,6 +1018,9 @@ footer {
     </div>
   </div>
 </section>
+    </div>
+  </div>
+</section>
 
 <!-- CAT: BENI -->
 <section class="shop-section alt" id="cat-beni">
@@ -1336,7 +1030,7 @@ footer {
         <p class="section-num">紅 — Red & pink</p>
         <h2>Beni</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1363,7 +1057,7 @@ footer {
           <div class="p-sub">Japanese cotton pearl paired with soft baby pink mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1391,7 +1085,7 @@ footer {
           <div class="p-sub">Luxurious deep red mizuhiki with gold pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1419,7 +1113,7 @@ footer {
           <div class="p-sub">Delicate pink-toned mizuhiki with swaying Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1432,6 +1126,9 @@ footer {
     </div>
   </div>
 </section>
+    </div>
+  </div>
+</section>
 
 <!-- CAT: AZUKI -->
 <section class="shop-section" id="cat-azuki">
@@ -1441,7 +1138,7 @@ footer {
         <p class="section-num">小豆 — Deep red & burgundy</p>
         <h2>Azuki</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1468,7 +1165,7 @@ footer {
           <div class="p-sub">Elegant burgundy mizuhiki with lustrous Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1496,7 +1193,7 @@ footer {
           <div class="p-sub">Deep burgundy mizuhiki accented with an azuki-toned pearl, grounded by a touch of silver.</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1524,7 +1221,7 @@ footer {
           <div class="p-sub">Soft azuki red mizuhiki with stunning gold accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1537,6 +1234,9 @@ footer {
     </div>
   </div>
 </section>
+    </div>
+  </div>
+</section>
 
 <!-- CAT: MORI -->
 <section class="shop-section alt" id="cat-mori">
@@ -1546,7 +1246,7 @@ footer {
         <p class="section-num">森 — Green & moss</p>
         <h2>Mori</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1573,7 +1273,7 @@ footer {
           <div class="p-sub">Fresh & summery green and white mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1601,7 +1301,7 @@ footer {
           <div class="p-sub">Chic lime green & white mizuhiki with golden accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1629,7 +1329,7 @@ footer {
           <div class="p-sub">Light green mizuhiki with pink pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1642,6 +1342,9 @@ footer {
     </div>
   </div>
 </section>
+    </div>
+  </div>
+</section>
 
 <!-- CAT: SORA -->
 <section class="shop-section" id="cat-sora">
@@ -1651,7 +1354,7 @@ footer {
         <p class="section-num">空 — Blue & navy</p>
         <h2>Sora</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1678,7 +1381,7 @@ footer {
           <div class="p-sub">Ice blue mizuhiki with a silver charm — perfect for summer</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1706,7 +1409,7 @@ footer {
           <div class="p-sub">Crisp blue and white mizuhiki with a striking contrast</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1734,7 +1437,7 @@ footer {
           <div class="p-sub">A fresh, bright blue mizuhiki paired with a silver charm</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1747,6 +1450,9 @@ footer {
     </div>
   </div>
 </section>
+    </div>
+  </div>
+</section>
 
 <!-- CAT: KOHAKU -->
 <section class="shop-section alt" id="cat-kohaku">
@@ -1756,7 +1462,7 @@ footer {
         <p class="section-num">琥珀 — Amber & taupe</p>
         <h2>Kohaku</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1783,7 +1489,7 @@ footer {
           <div class="p-sub">Sophisticated taupe and gold mizuhiki with Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1811,7 +1517,7 @@ footer {
           <div class="p-sub">Graceful mocha brown and gold mizuhiki with Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1839,7 +1545,7 @@ footer {
           <div class="p-sub">Amber and taupe mizuhiki with cream Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1852,6 +1558,9 @@ footer {
     </div>
   </div>
 </section>
+    </div>
+  </div>
+</section>
 
 <!-- CAT: MIYABI -->
 <section class="shop-section" id="cat-miyabi">
@@ -1861,7 +1570,7 @@ footer {
         <p class="section-num">雅 — Lavender &amp; purple</p>
         <h2>Miyabi</h2>
       </div>
-      <a href="#earrings" class="see-all">← All Colors</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1888,7 +1597,7 @@ footer {
           <div class="p-sub">Purple-toned mizuhiki with delicate Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1916,7 +1625,7 @@ footer {
           <div class="p-sub">Deep purple and white mizuhiki with a vivid pink pearl accent</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1944,7 +1653,7 @@ footer {
           <div class="p-sub">Soft pastel purple mizuhiki with sweet pink pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1957,6 +1666,9 @@ footer {
     </div>
   </div>
 </section>
+    </div>
+  </div>
+</section>
 
 
 
@@ -1966,11 +1678,11 @@ footer {
 <section class="shop-section" id="bookmarks">
   <div class="shop-inner">
     <div class="section-head">
-      <div class="section-head-left">
+      <div>
         <p class="section-num">しおり — Bookmarks</p>
         <h2>Bookmarks</h2>
       </div>
-      <a href="#shop-top" class="btn-back">↑ Back to top</a>
+      <a href="#shop" class="see-all">← All Colors</a>
     </div>
     <div class="p-grid">
 
@@ -1997,7 +1709,7 @@ footer {
           <div class="p-sub">Adorable creamy multicolor mizuhiki with Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2025,7 +1737,7 @@ footer {
           <div class="p-sub">Cute yellow bookmark with playful Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2053,7 +1765,7 @@ footer {
           <div class="p-sub">Red & pink mizuhiki bookmark</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2081,7 +1793,7 @@ footer {
           <div class="p-sub">Deep red & burgundy with delicate gold details</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2109,7 +1821,7 @@ footer {
           <div class="p-sub">Soft and calming matcha green mizuhiki with a Japanese cotton pearl.</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2137,7 +1849,7 @@ footer {
           <div class="p-sub">Deep & moody blue mizuhiki with azuki red pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2165,7 +1877,7 @@ footer {
           <div class="p-sub">Amber and taupe mizuhiki bookmark with Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2193,7 +1905,7 @@ footer {
           <div class="p-sub">Gorgeous purple-toned mizuhiki with Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2235,7 +1947,7 @@ footer {
           <p>Coming soon</p>
         </div>
       </div>
-      <div class="p-card-soon-rings">
+<div class="p-card-soon-rings">
         <div class="p-card-soon-inner">
           <div class="soon-icon">🌸</div>
           <p>Coming soon</p>
@@ -2256,7 +1968,7 @@ footer {
           <div class="p-sub">Description here</div>
           <div class="p-bottom">
             <span class="p-price">$XX</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2265,10 +1977,7 @@ footer {
     </div>
   </div>
 </section>
-<!-- SHOP THE COLLECTION BUTTON -->
-<div class="shop-collection-button-section">
-  <a href="#shop-top" class="btn-shop-collection">Shop the collection</a>
-</div>
+
 <!-- SHIPPING & RETURNS -->
 <div id="shipping">
 <div class="info-section">
@@ -2294,7 +2003,7 @@ footer {
   <h2>About totoi japan</h2>
   
   <!-- タイトルと本文の間の横長写真 -->
-  <img src="member_photos/widelength.jpeg" alt="totoi japan workshop" class="about-hero-image">
+  <img src="member photos/widelength.jpeg" alt="totoi japan workshop" class="about-hero-image">
   
   <p>We are a small handmade brand based in Japan — two women, crafting each piece with care and intention.</p>
   <p>We take this ancient tradition and reinterpret it into wearable, everyday pieces.
@@ -2304,7 +2013,7 @@ Every piece is made slowly by hand — which means no two are exactly alike. </p
 <!-- 本文の後ろの2枚の写真（横並び） -->
 <div class="about-images">
   <div class="about-image-item">
-    <img src="member_photos/yoko.jpeg" alt="Yoko" class="about-image">
+    <img src="member photos/yoko.jpeg" alt="Yoko" class="about-image">
     <p class="about-image-name">yoko</p>
   </div>
 
@@ -2312,7 +2021,7 @@ Every piece is made slowly by hand — which means no two are exactly alike. </p
   <img src="logo.jpg" alt="totoi japan" style="width:60px; height:60px; border-radius:50%; object-fit:contain; align-self:center; opacity:0.7;">
 
   <div class="about-image-item">
-    <img src="member_photos/mami.jpeg" alt="Mami" class="about-image">
+    <img src="member photos/mami.jpeg" alt="Mami" class="about-image">
     <p class="about-image-name">mami</p>
   </div>
 </div>
@@ -2322,6 +2031,7 @@ Every piece is made slowly by hand — which means no two are exactly alike. </p
   <a href="#shop-top" class="btn-main f4">Shop the collection</a>
 </div>
 
+<!-- SAFE FOR SENSITIVE SKIN -->
 <!-- SAFE FOR SENSITIVE SKIN -->
 <div class="info-section" id="sensitive-skin-section">
   <h2>Safe for Sensitive Skin</h2>
@@ -2391,7 +2101,7 @@ At totoi japan, we are drawn to the Ume-musubi — a knot said to strengthen bon
   
   <h3>Email</h3>
   <p>You can also reach us by email:</p>
-  <span class="email-display">totoijapan02@gmail.com</span>
+  <span class="email-display">hello@totoijapan02@gmail.com</span>
   <p class="note">Please allow 2-3 business days for email responses</p>
 </section>
 
@@ -2407,7 +2117,7 @@ At totoi japan, we are drawn to the Ume-musubi — a knot said to strengthen bon
     <a href="#about-section">About</a>
     <a href="#shipping">Shipping</a>
     <a href="#contact">Contact</a>
-    <a href="https://totoijapan.etsy.com" target="_blank">Etsy ↗</a>
+    <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
     <a href="https://www.instagram.com/totoi_japan" target="_blank">Instagram ↗</a>
   </div>
   <p class="footer-copy">© 2025 totoi japan. All rights reserved. Handmade in Japan.</p>
@@ -2419,9 +2129,13 @@ function moveGallery(btn, dir) {
   const gallery = card.querySelector('.p-gallery');
   const items = gallery.querySelectorAll('.p-gallery-item');
   const dots = card.querySelectorAll('.p-gallery-dot');
-  let current = parseInt(gallery.dataset.current || 0);
+  let current = 0;
+  const transform = gallery.style.transform;
+  if (transform) {
+    const match = transform.match(/-?([\d.]+)%/);
+    if (match) current = Math.round(parseFloat(match[1]) / 100);
+  }
   current = (current + dir + items.length) % items.length;
-  gallery.dataset.current = current;
   gallery.style.transform = `translateX(-${current * 100}%)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === current));
 }
@@ -2430,64 +2144,13 @@ function goToSlide(dot, idx) {
   const card = dot.closest('.p-img');
   const gallery = card.querySelector('.p-gallery');
   const dots = card.querySelectorAll('.p-gallery-dot');
-  gallery.dataset.current = idx;
   gallery.style.transform = `translateX(-${idx * 100}%)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
-// スワイプジェスチャー機能
-function initSwipe() {
-  const containers = document.querySelectorAll('.p-img');
-  containers.forEach(container => {
-    const gallery = container.querySelector('.p-gallery');
-    const items = gallery.querySelectorAll('.p-gallery-item');
-    const itemCount = items.length;
-    
-    let startX = 0;
-    let currentX = 0;
-
-    container.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-
-    container.addEventListener('touchmove', (e) => {
-      currentX = e.touches[0].clientX;
-    }, { passive: true });
-
-    container.addEventListener('touchend', (e) => {
-      const diff = startX - currentX;
-      const threshold = 30; // スワイプ検出のしきい値
-      
-      if (Math.abs(diff) > threshold) {
-        let currentIndex = parseInt(gallery.dataset.current || 0);
-        if (diff > 0) {
-          // 左へスワイプ → 次の画像
-          currentIndex = (currentIndex + 1) % itemCount;
-        } else {
-          // 右へスワイプ → 前の画像
-          currentIndex = (currentIndex - 1 + itemCount) % itemCount;
-        }
-        gallery.dataset.current = currentIndex;
-        gallery.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
-        // ドットの更新
-        const dots = container.querySelectorAll('.p-gallery-dot');
-        dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
-      }
-    }, { passive: true });
-  });
-}
-
-// ページロード時にスワイプ機能を初期化
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSwipe);
-} else {
-  initSwipe();
-}
-
+// タブのアクティブ状態をスクロールに合わせて更新
 const tabs = document.querySelectorAll('.product-nav-tab');
 const sections = ['earrings', 'bookmarks', 'rings'];
-const floatBtn = document.querySelector('.btn-back-float');  // ← この行を追加
 
 window.addEventListener('scroll', () => {
   let current = sections[0];
@@ -2499,15 +2162,8 @@ window.addEventListener('scroll', () => {
     const href = tab.getAttribute('href').replace('#', '');
     tab.classList.toggle('active', href === current);
   });
-  
-  // フロートボタンの表示制御
-  // const floatBtn = document.querySelector('.btn-back-float'); ← この行を削除
-  if (window.scrollY > 100) {
-    floatBtn.classList.add('show');
-  } else {
-    floatBtn.classList.remove('show');
-  }
 });
+}
 </script>
 
 </body>
