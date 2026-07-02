@@ -318,25 +318,6 @@ nav a:hover { color: var(--crimson); }
   padding: 0.1rem 0.45rem;
   border-radius: 999px;
 }
-/* ── SOLD OVERLAY ── */
-.p-card.sold .p-img {
-  position: relative;
-}
-
-.p-card.sold .p-img::after {
-  content: "SOLD";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  font-size: 60px;
-  font-weight: bold;
-  color: rgba(255, 192, 203, 0.7); 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  letter-spacing: 3px;
-}
-
 
 /* ── SHOP SECTION ── */
 .shop-section {
@@ -745,13 +726,7 @@ footer {
     /* Header */
     .header-logo-text { display: none; }
     nav a:not(.ig-btn) { display: none; }
-
-    /* SOLD のスマホ用調整 ← ここに追加 */
-    .p-card.sold .p-img::after {
-      font-size: 36px;
-      letter-spacing: 2px;
-    }
-       
+    
     /* Product Nav */
     .product-nav { display: block !important; height: auto; }
     .product-nav-inner { padding: 0 1rem; }
@@ -785,16 +760,6 @@ footer {
       background: var(--navy);
       transform: scale(0.98);
     }
-@media (max-width: 600px) {
-  /* ... 既存コード ... */
-  
-  /* SOLD のスマホ用調整 */
-  .p-card.sold .p-img::after {
-    font-size: 36px;
-    letter-spacing: 2px;
-  }
-}
-
     /* Section Head */
     .section-head {
       flex-direction: column;
@@ -1038,7 +1003,7 @@ footer {
     <a href="#shop-top">Shop</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
-    <a href="https://totoijapan.etsy.com" target="_blank">Etsy ↗</a>
+    <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
     <a href="https://www.instagram.com/totoi_japan" target="_blank" class="ig-btn">Instagram ↗</a>
   </nav>
 </header>
@@ -1184,7 +1149,7 @@ footer {
           <div class="p-sub">Cream and gold mizuhiki with delicate Japanese cotton pearls and pink pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1212,7 +1177,7 @@ footer {
           <div class="p-sub">Elegant white and silver mizuhiki with blue pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1240,7 +1205,7 @@ footer {
           <div class="p-sub">Refined white & cream mizuhiki with silver accents and pink pearl details</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1289,7 +1254,7 @@ footer {
           <div class="p-sub">Bright yellow mizuhiki with striking blue pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1317,13 +1282,13 @@ footer {
           <div class="p-sub">Vibrant orange mizuhiki with silver charm</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
 
       <!-- Earrings 3 -->
-      <div class="p-card sold">
+      <div class="p-card">
         <div class="p-img" style="background:#fdf6e3;">
           <div class="p-gallery">
             <div class="p-gallery-item">
@@ -1349,7 +1314,7 @@ footer {
           <div class="p-sub">Asymmetric design with vibrant yellow & gold mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1398,7 +1363,7 @@ footer {
           <div class="p-sub">Japanese cotton pearl paired with soft baby pink mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1426,7 +1391,7 @@ footer {
           <div class="p-sub">Luxurious deep red mizuhiki with gold pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1454,7 +1419,7 @@ footer {
           <div class="p-sub">Delicate pink-toned mizuhiki with swaying Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1503,7 +1468,7 @@ footer {
           <div class="p-sub">Elegant burgundy mizuhiki with lustrous Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1531,7 +1496,7 @@ footer {
           <div class="p-sub">Deep burgundy mizuhiki accented with an azuki-toned pearl, grounded by a touch of silver.</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1559,7 +1524,7 @@ footer {
           <div class="p-sub">Soft azuki red mizuhiki with stunning gold accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1608,7 +1573,7 @@ footer {
           <div class="p-sub">Fresh & summery green and white mizuhiki</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1636,7 +1601,7 @@ footer {
           <div class="p-sub">Chic lime green & white mizuhiki with golden accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1664,7 +1629,7 @@ footer {
           <div class="p-sub">Light green mizuhiki with pink pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1713,7 +1678,7 @@ footer {
           <div class="p-sub">Ice blue mizuhiki with a silver charm — perfect for summer</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1741,7 +1706,7 @@ footer {
           <div class="p-sub">Crisp blue and white mizuhiki with a striking contrast</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1769,7 +1734,7 @@ footer {
           <div class="p-sub">A fresh, bright blue mizuhiki paired with a silver charm</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1818,7 +1783,7 @@ footer {
           <div class="p-sub">Sophisticated taupe and gold mizuhiki with Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1846,7 +1811,7 @@ footer {
           <div class="p-sub">Graceful mocha brown and gold mizuhiki with Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1874,7 +1839,7 @@ footer {
           <div class="p-sub">Amber and taupe mizuhiki with cream Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1923,7 +1888,7 @@ footer {
           <div class="p-sub">Purple-toned mizuhiki with delicate Japanese cotton pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1951,7 +1916,7 @@ footer {
           <div class="p-sub">Deep purple and white mizuhiki with a vivid pink pearl accent</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -1979,7 +1944,7 @@ footer {
           <div class="p-sub">Soft pastel purple mizuhiki with sweet pink pearls</div>
           <div class="p-bottom">
             <span class="p-price">$35</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2032,7 +1997,7 @@ footer {
           <div class="p-sub">Adorable creamy multicolor mizuhiki with Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2060,7 +2025,7 @@ footer {
           <div class="p-sub">Cute yellow bookmark with playful Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2088,7 +2053,7 @@ footer {
           <div class="p-sub">Red & pink mizuhiki bookmark</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2116,7 +2081,7 @@ footer {
           <div class="p-sub">Deep red & burgundy with delicate gold details</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2144,7 +2109,7 @@ footer {
           <div class="p-sub">Soft and calming matcha green mizuhiki with a Japanese cotton pearl.</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2172,7 +2137,7 @@ footer {
           <div class="p-sub">Deep & moody blue mizuhiki with azuki red pearl accents</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2200,7 +2165,7 @@ footer {
           <div class="p-sub">Amber and taupe mizuhiki bookmark with Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2228,7 +2193,7 @@ footer {
           <div class="p-sub">Gorgeous purple-toned mizuhiki with Tama-musubi (round knots)</div>
           <div class="p-bottom">
             <span class="p-price">$25</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://ebay.com" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2291,7 +2256,7 @@ footer {
           <div class="p-sub">Description here</div>
           <div class="p-bottom">
             <span class="p-price">$XX</span>
-            <a href="https://totoijapan.etsy.com" target="_blank" class="btn-buy">Details on Etsy</a>
+            <a href="https://www.ebay.com/usr/totoi_japan" target="_blank" class="btn-buy">Details on eBay</a>
           </div>
         </div>
       </div>
@@ -2391,7 +2356,7 @@ At totoi japan, we are drawn to the Ume-musubi — a knot said to strengthen bon
   <p>Yes! We love creating custom mizuhiki pieces. Send us a DM on Instagram with your ideas, preferred colors, and occasion. Custom orders typically take 2-3 weeks.</p>
    
   <h3>Do you offer gift wrapping?</h3>
-<p>We also offer special gift wrapping for an additional $4. Your item will be wrapped in beautiful Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Simply select the "Gift wrapping" option.</p>
+<p>Each totoi piece is already carefully packaged, but we also offer a special gift wrapping option for an additional $4. Your item will be wrapped in beautiful Japanese-themed paper, tied with a mizuhiki cord, and placed in an organza pouch — ready to give as a gift. Available as a separate listing in our shop.</p>
  
 <div class="gift-wrap-images" style="display: flex; gap: 2rem; justify-content: center; max-width: 700px; margin: 2rem auto; flex-wrap: wrap;">
   <figure style="flex: 1; min-width: 250px; text-align: center; margin: 0;">
@@ -2426,7 +2391,7 @@ At totoi japan, we are drawn to the Ume-musubi — a knot said to strengthen bon
   
   <h3>Email</h3>
   <p>You can also reach us by email:</p>
-  <span class="email-display">totoijapan02@gmail.com</span>
+  <span class="email-display">hello@totoijapan02@gmail.com</span>
   <p class="note">Please allow 2-3 business days for email responses</p>
 </section>
 
@@ -2442,7 +2407,7 @@ At totoi japan, we are drawn to the Ume-musubi — a knot said to strengthen bon
     <a href="#about-section">About</a>
     <a href="#shipping">Shipping</a>
     <a href="#contact">Contact</a>
-    <a href="https://totoijapan.etsy.com" target="_blank">Etsy ↗</a>
+    <a href="https://www.ebay.com/usr/totoi_japan" target="_blank">eBay ↗</a>
     <a href="https://www.instagram.com/totoi_japan" target="_blank">Instagram ↗</a>
   </div>
   <p class="footer-copy">© 2025 totoi japan. All rights reserved. Handmade in Japan.</p>
